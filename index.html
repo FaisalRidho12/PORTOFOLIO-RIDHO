@@ -3,33 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahmad Faisal RidhoTullah — Portfolio</title>
+<title>Ahmad Faisal RidhoTullah</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
-<!-- LUCIDE ICONS CDN -->
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-  --gold: #c0a060; --gold-light: #d4b87a; --gold-dim: rgba(192,160,96,0.12);
-  --bg: #080808; --bg2: #0e0e0e; --bg3: #141414; --bg4: #1a1a1a;
-  --border: #1c1c1c; --border2: #252525; --border3: #2e2e2e;
-  --text: #e2e2e2; --muted: #5a5a5a; --muted2: #3a3a3a; --muted3: #888;
+  --gold: #9c7a3d; --gold-light: #b8925a; --gold-dim: rgba(156,122,61,0.10);
+  --bg: #faf8f4; --bg2: #ffffff; --bg3: #f4efe5; --bg4: #ece4d3;
+  --border: #e9e2d3; --border2: #ddd2ba; --border3: #c7b896;
+  --text: #241f19; --text-soft: #5c5346; --muted: #9a9082; --muted2: #c9bfa9; --muted3: #6f6557;
 }
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
 
-/* CURSOR GLOW */
 #cursor-glow {
   pointer-events: none; position: fixed; z-index: 9999;
   width: 400px; height: 400px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(192,160,96,0.06) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  transition: opacity 0.3s;
+  background: radial-gradient(circle, rgba(156,122,61,0.05) 0%, transparent 70%);
+  transform: translate(-50%, -50%); transition: opacity 0.3s;
 }
-
-/* SCROLLBAR */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border3); border-radius: 2px; }
@@ -39,128 +34,79 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
   padding: 1.1rem 3rem;
-  background: rgba(8,8,8,0.85);
-  backdrop-filter: blur(20px);
-  border-bottom: 0.5px solid var(--border);
-  transition: padding 0.3s;
+  background: rgba(250,248,244,0.88); backdrop-filter: blur(20px);
+  border-bottom: 0.5px solid var(--border); transition: padding 0.3s;
 }
 nav.scrolled { padding: 0.8rem 3rem; }
-.nav-logo { font-size: 14px; font-weight: 600; letter-spacing: 4px; color: #fff; text-decoration: none; }
+.nav-logo { font-size: 14px; font-weight: 600; letter-spacing: 4px; color: var(--text); text-decoration: none; }
 .nav-logo span { color: var(--gold); }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a { font-size: 11px; color: var(--muted); text-decoration: none; letter-spacing: 2px; transition: color 0.2s; }
 .nav-links a:hover { color: var(--gold); }
-.nav-cta {
-  font-size: 11px; color: var(--gold); border: 0.5px solid var(--gold);
-  padding: 7px 18px; text-decoration: none; letter-spacing: 1.5px;
-  transition: all 0.25s; border-radius: 1px;
-}
-.nav-cta:hover { background: var(--gold); color: #080808; }
+.nav-cta { font-size: 11px; color: var(--gold); border: 0.5px solid var(--gold); padding: 7px 18px; text-decoration: none; letter-spacing: 1.5px; transition: all 0.25s; border-radius: 1px; }
+.nav-cta:hover { background: var(--gold); color: #fff; }
 
-/* HERO */
+/* ══════════════════════════════════════
+   HERO — teks rata tengah
+══════════════════════════════════════ */
 #hero {
   min-height: 100vh;
-  display: flex; flex-direction: column; justify-content: center;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
   padding: 9rem 3rem 5rem;
   border-bottom: 0.5px solid var(--border);
   position: relative; overflow: hidden;
+  text-align: center;
 }
 .hero-bg-text {
-  position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
   font-size: clamp(8rem, 18vw, 16rem); font-weight: 700;
-  color: rgba(255,255,255,0.015); letter-spacing: -4px;
+  color: rgba(28,22,14,0.035); letter-spacing: -4px;
   pointer-events: none; user-select: none; white-space: nowrap;
 }
-.hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: center; }
+.hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 5rem; align-items: center; width: 100%; max-width: 1100px; text-align: left; }
 .hero-eyebrow { font-size: 10px; letter-spacing: 5px; color: var(--gold); margin-bottom: 1.75rem; display: flex; align-items: center; gap: 12px; }
 .hero-eyebrow::before { content: ''; display: block; width: 30px; height: 0.5px; background: var(--gold); }
-.hero-name {
-  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
-  font-weight: 600; color: #fff; line-height: 1.05;
-  margin-bottom: 0.75rem; letter-spacing: -1.5px;
-}
-.hero-typing {
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  font-weight: 300; color: var(--muted3); margin-bottom: 2rem;
-  min-height: 2em;
-}
+.hero-name { font-size: clamp(2.8rem, 5.5vw, 4.8rem); font-weight: 600; color: var(--text); line-height: 1.05; margin-bottom: 0.75rem; letter-spacing: -1.5px; }
+.hero-typing { font-size: clamp(1rem, 2vw, 1.4rem); font-weight: 300; color: var(--muted3); margin-bottom: 2rem; min-height: 2em; }
 .hero-typing .typed { color: var(--gold); font-weight: 400; }
 .cursor-blink { display: inline-block; width: 2px; height: 1.1em; background: var(--gold); margin-left: 2px; vertical-align: middle; animation: blink 1s step-end infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-.hero-desc { font-size: 14px; color: #555; max-width: 520px; line-height: 1.9; margin-bottom: 3rem; }
+.hero-desc { font-size: 14px; color: var(--text-soft); max-width: 520px; line-height: 1.9; margin-bottom: 3rem; }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
-.btn-gold {
-  background: var(--gold); color: #080808;
-  padding: 12px 30px; font-size: 11px; font-weight: 600;
-  letter-spacing: 2px; border: none; cursor: pointer;
-  text-decoration: none; display: inline-block;
-  transition: all 0.25s; border-radius: 1px;
-}
+.btn-gold { background: var(--gold); color: #fff; padding: 12px 30px; font-size: 11px; font-weight: 600; letter-spacing: 2px; border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.25s; border-radius: 1px; }
 .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
-.btn-ghost {
-  background: transparent; color: #777;
-  padding: 12px 30px; font-size: 11px; letter-spacing: 2px;
-  border: 0.5px solid var(--border2); cursor: pointer;
-  text-decoration: none; display: inline-block;
-  transition: all 0.25s; border-radius: 1px;
-}
-.btn-ghost:hover { border-color: #777; color: #fff; transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--muted3); padding: 12px 30px; font-size: 11px; letter-spacing: 2px; border: 0.5px solid var(--border2); cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.25s; border-radius: 1px; }
+.btn-ghost:hover { border-color: var(--muted3); color: var(--text); transform: translateY(-1px); }
 
-/* PHOTO — hardcode path lokal */
+/* PHOTO */
 .hero-photo-wrap { position: relative; flex-shrink: 0; }
-.hero-photo {
-  width: 260px; height: 320px;
-  border: 0.5px solid var(--border2);
-  background: var(--bg2);
-  position: relative; overflow: hidden;
-  border-radius: 2px;
-}
-/*
-  =====================================================
-  GANTI PATH FOTO DI BAWAH INI:
-  Contoh lokal: src="./foto/profil.jpg"
-  Contoh absolut: src="/Users/namaKamu/foto/profil.jpg"
-  =====================================================
-*/
-.hero-photo img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  /* Hapus comment di bawah dan isi path foto kamu: */
-  /* src diset via tag <img> di bawah */
-}
-.hero-photo-corner {
-  position: absolute; width: 20px; height: 20px;
-  border-color: var(--gold); border-style: solid;
-}
+.hero-photo { width: 260px; height: 320px; border: 0.5px solid var(--border2); background: var(--bg2); position: relative; overflow: hidden; border-radius: 2px; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-photo-corner { position: absolute; width: 20px; height: 20px; border-color: var(--gold); border-style: solid; }
 .hero-photo-corner.tl { top: -6px; left: -6px; border-width: 1.5px 0 0 1.5px; }
 .hero-photo-corner.br { bottom: -6px; right: -6px; border-width: 0 1.5px 1.5px 0; }
 
-.hero-stats {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  border-top: 0.5px solid var(--border); margin-top: 5rem;
-}
+.hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 0.5px solid var(--border); margin-top: 5rem; width: 100%; max-width: 1100px; }
 .hstat { padding: 1.75rem 0; border-right: 0.5px solid var(--border); }
 .hstat:last-child { border-right: none; }
-.hstat-num { font-size: 2rem; font-weight: 600; color: #fff; }
+.hstat-num { font-size: 2rem; font-weight: 600; color: var(--text); }
 .hstat-num span { color: var(--gold); }
 .hstat-label { font-size: 10px; color: var(--muted); letter-spacing: 1.5px; margin-top: 4px; }
 
 /* SECTIONS */
 section { padding: 5.5rem 3rem; border-bottom: 0.5px solid var(--border); }
-.sec-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3.5rem; }
+.sec-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1rem; }
 .sec-num { font-size: 11px; letter-spacing: 3px; color: var(--gold); white-space: nowrap; }
 .sec-divider { flex: 1; height: 0.5px; background: var(--border); }
-.sec-title { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 500; color: #fff; letter-spacing: -0.5px; }
+.sec-title { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 500; color: var(--text); letter-spacing: -0.5px; margin-bottom: 2.5rem; }
 
 /* ABOUT */
 .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 5rem; align-items: start; }
-.about-text p { font-size: 14px; color: #666; line-height: 2; margin-bottom: 1.1rem; }
-.about-text p strong { color: #ccc; font-weight: 500; }
-.about-quote {
-  margin: 2rem 0; padding: 1.25rem 1.5rem;
-  border-left: 2px solid var(--gold);
-  background: var(--bg2);
-}
-.about-quote p { font-size: 14px; color: #888; font-style: italic; margin: 0; }
+.about-text p { font-size: 14px; color: var(--text-soft); line-height: 2; margin-bottom: 1.1rem; }
+.about-text p strong { color: var(--text); font-weight: 500; }
+.about-quote { margin: 2rem 0; padding: 1.25rem 1.5rem; border-left: 2px solid var(--gold); background: var(--bg2); }
+.about-quote p { font-size: 14px; color: var(--text-soft); font-style: italic; margin: 0; }
 .about-info { display: grid; gap: 0; }
 .info-row { display: flex; gap: 1rem; padding: 0.9rem 0; border-bottom: 0.5px solid var(--border); align-items: flex-start; }
 .info-row:first-child { border-top: 0.5px solid var(--border); }
@@ -168,140 +114,222 @@ section { padding: 5.5rem 3rem; border-bottom: 0.5px solid var(--border); }
 .info-val { font-size: 13px; color: var(--text); }
 .info-val a { color: var(--gold); text-decoration: none; }
 .info-val a:hover { text-decoration: underline; }
-.status-dot { display: inline-block; width: 6px; height: 6px; background: #4ade80; border-radius: 50%; margin-right: 6px; animation: pulse-dot 2s infinite; }
+.status-dot { display: inline-block; width: 6px; height: 6px; background: #4ade80; border-radius: 50%; margin-right: 6px; animation: pulse-dot 2s infinite; vertical-align: middle; }
 @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
 
-/* SKILLS */
-.skills-wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; }
-.skills-col-title { font-size: 10px; letter-spacing: 3px; color: var(--gold); margin-bottom: 2rem; padding-bottom: 0.75rem; border-bottom: 0.5px solid var(--border); }
-.skill-item { margin-bottom: 1.5rem; }
-.skill-row { display: flex; justify-content: space-between; margin-bottom: 8px; align-items: center; }
-.skill-name-wrap { display: flex; align-items: center; gap: 10px; }
-.skill-icon { color: var(--gold); display: flex; align-items: center; flex-shrink: 0; opacity: 0.85; }
-.skill-icon svg { width: 15px; height: 15px; stroke: var(--gold); }
-.skill-name { font-size: 13px; color: var(--text); }
-.skill-pct { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
-.skill-bar { height: 1.5px; background: var(--border2); overflow: hidden; }
-.skill-fill { height: 100%; background: var(--gold); width: 0; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
-.soft-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
-.soft-item {
-  display: flex; align-items: center; gap: 10px;
-  padding: 0.85rem 1rem;
-  border: 0.5px solid var(--border); border-radius: 2px;
-  font-size: 12px; color: #999;
-  background: var(--bg2);
-  transition: border-color 0.2s, color 0.2s;
+/* ══════════════════════════════════════
+   SKILLS — Hard Skill: Marquee Cards
+   Soft Skill: Grid kanan
+══════════════════════════════════════ */
+.skills-wrap { display: flex; flex-direction: column; gap: 3rem; }
+.skills-col-title { font-size: 10px; letter-spacing: 3px; color: var(--gold); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 0.5px solid var(--border); }
+
+/* Marquee container */
+.skill-marquee-outer { overflow: hidden; position: relative; }
+.skill-marquee-outer::before,
+.skill-marquee-outer::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2; pointer-events: none;
 }
-.soft-item:hover { border-color: var(--border3); color: var(--text); }
-.soft-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+.skill-marquee-outer::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+.skill-marquee-outer::after  { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+
+.skill-marquee-track {
+  display: flex; gap: 12px;
+  width: max-content;
+  animation: marquee-rtl 22s linear infinite;
+}
+.skill-marquee-track:hover { animation-play-state: paused; }
+@keyframes marquee-rtl {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Skill Card */
+.skill-card {
+  flex-shrink: 0;
+  width: 130px;
+  background: var(--bg2);
+  border: 0.5px solid var(--border2);
+  border-radius: 6px;
+  padding: 1.1rem 0.9rem;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  cursor: default;
+}
+.skill-card:hover { border-color: var(--gold); background: var(--bg3); transform: translateY(-3px); }
+.skill-card-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--gold-dim); border: 0.5px solid rgba(156,122,61,0.2); display: flex; align-items: center; justify-content: center; }
+.skill-card-icon svg { width: 18px; height: 18px; stroke: var(--gold); }
+.skill-card-name { font-size: 11px; color: var(--text); text-align: center; line-height: 1.35; }
+.skill-card-pct { font-size: 10px; color: var(--gold); font-weight: 500; }
+
+/* Soft Skill Card — statis, tanpa animasi gerak */
+.soft-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9rem; }
+.soft-card {
+  background: var(--bg2);
+  border: 0.5px solid var(--border2);
+  border-radius: 6px;
+  padding: 1.1rem 0.9rem;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  text-align: center;
+  transition: border-color 0.2s, background 0.2s;
+  cursor: default;
+}
+.soft-card:hover { border-color: var(--gold); background: var(--bg3); }
+.soft-card-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--gold-dim); border: 0.5px solid rgba(156,122,61,0.2); display: flex; align-items: center; justify-content: center; }
+.soft-card-icon svg { width: 18px; height: 18px; stroke: var(--gold); }
+.soft-card-name { font-size: 11px; color: var(--text); line-height: 1.35; }
 
 /* EXPERIENCE */
-.exp-item {
-  display: grid; grid-template-columns: 220px 1fr;
-  gap: 3rem; padding: 3rem 0;
-  border-bottom: 0.5px solid var(--border);
-}
+.exp-item { display: grid; grid-template-columns: 220px 1fr; gap: 3rem; padding: 3rem 0; border-bottom: 0.5px solid var(--border); }
 .exp-item:first-child { padding-top: 0; }
 .exp-item:last-child { border-bottom: none; }
 .exp-date { font-size: 10px; color: var(--muted); letter-spacing: 1.5px; margin-bottom: 0.6rem; }
-.exp-place { font-size: 15px; font-weight: 500; color: #fff; margin-bottom: 0.3rem; }
-.exp-type {
-  font-size: 10px; color: var(--bg);
-  background: var(--gold); display: inline-block;
-  padding: 3px 10px; letter-spacing: 1px; border-radius: 1px;
-  margin-top: 4px;
-}
-.exp-role { font-size: 20px; font-weight: 500; color: #fff; margin-bottom: 1.25rem; letter-spacing: -0.3px; }
+.exp-place { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 0.3rem; }
+.exp-type { font-size: 10px; color: var(--bg); background: var(--gold); display: inline-block; padding: 3px 10px; letter-spacing: 1px; border-radius: 1px; margin-top: 4px; }
+.exp-role { font-size: 20px; font-weight: 500; color: var(--text); margin-bottom: 1.25rem; letter-spacing: -0.3px; }
 .exp-points { list-style: none; display: grid; gap: 0.6rem; }
-.exp-points li { font-size: 13px; color: #666; padding-left: 1.25rem; position: relative; line-height: 1.7; }
+.exp-points li { font-size: 13px; color: var(--text-soft); padding-left: 1.25rem; position: relative; line-height: 1.7; }
 .exp-points li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
-.exp-points li strong { color: #aaa; font-weight: 500; }
+.exp-points li strong { color: var(--text); font-weight: 500; }
 .exp-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 1.5rem; }
-.etag { font-size: 10px; color: #555; background: var(--border); padding: 4px 10px; border-radius: 1px; letter-spacing: 0.5px; border: 0.5px solid var(--border2); }
+.etag { font-size: 10px; color: var(--text-soft); background: var(--border); padding: 4px 10px; border-radius: 1px; letter-spacing: 0.5px; border: 0.5px solid var(--border2); }
 
-/* PROJECTS */
-.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+/* ══════════════════════════════════════
+   PROJECTS — individual cards, 3 col
+══════════════════════════════════════ */
+.proj-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
 .proj-card {
-  background: var(--bg2); padding: 2rem;
-  transition: background 0.25s; cursor: default;
-  position: relative; overflow: hidden;
+  background: var(--bg2);
+  border: 0.5px solid var(--border2);
+  border-radius: 8px;
+  padding: 1.75rem;
+  display: flex; flex-direction: column;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  cursor: default; position: relative; overflow: hidden;
 }
-.proj-card::after {
-  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-  height: 2px; background: var(--gold);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform 0.3s ease;
+.proj-card::before {
+  content: ''; position: absolute; inset: 0; border-radius: 8px;
+  background: linear-gradient(135deg, rgba(156,122,61,0.04), transparent 60%);
+  opacity: 0; transition: opacity 0.3s;
 }
-.proj-card:hover { background: var(--bg3); }
-.proj-card:hover::after { transform: scaleX(1); }
-.proj-icon {
-  width: 42px; height: 42px; border-radius: 8px;
-  background: var(--gold-dim); border: 0.5px solid rgba(192,160,96,0.2);
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 1.25rem;
-}
+.proj-card:hover { transform: translateY(-5px); border-color: rgba(156,122,61,0.4); box-shadow: 0 12px 32px rgba(156,122,61,0.12), 0 0 0 0.5px rgba(156,122,61,0.15); }
+.proj-card:hover::before { opacity: 1; }
+.proj-card.featured { background: var(--bg3); border-color: var(--border3); }
+.proj-icon { width: 42px; height: 42px; border-radius: 8px; background: var(--gold-dim); border: 0.5px solid rgba(156,122,61,0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; flex-shrink: 0; }
 .proj-icon svg { width: 20px; height: 20px; stroke: var(--gold); }
-.proj-badge { font-size: 9px; letter-spacing: 2px; color: var(--gold); margin-bottom: 0.6rem; }
-.proj-name { font-size: 16px; font-weight: 500; color: #fff; margin-bottom: 0.75rem; line-height: 1.35; }
-.proj-desc { font-size: 12px; color: #555; line-height: 1.75; margin-bottom: 1.25rem; }
-
-/* PROJECT PROOF IMAGE — UNCOMMENT SAAT FOTO SUDAH SIAP */
-
-.proj-proof {
-  width: 100%; height: 160px; object-fit: cover;
-  object-position: center top;
-  border-radius: 2px; border: 0.5px solid var(--border2);
-  margin-bottom: 1.25rem; display: block;
-  opacity: 0.7; transition: opacity 0.25s, transform 0.25s;
-  flex-shrink: 0;
-}
-.proj-card:hover .proj-proof { opacity: 1; transform: scale(1.01); }
-
-
-.proj-stack { display: flex; flex-wrap: wrap; gap: 5px; }
-.ptag { font-size: 10px; color: #4a4a4a; background: var(--border); padding: 3px 9px; border-radius: 1px; border: 0.5px solid var(--border2); }
-.proj-card.featured { background: var(--bg3); }
+.proj-badge { font-size: 9px; letter-spacing: 2px; color: var(--gold); margin-bottom: 0.5rem; }
 .proj-card.featured .proj-badge { color: var(--gold-light); }
+.proj-name { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 0.6rem; line-height: 1.35; }
+.proj-desc { font-size: 12px; color: var(--text-soft); line-height: 1.75; margin-bottom: 1.25rem; flex: 1; }
+.proj-proof {
+  width: 100%; height: 150px; object-fit: cover; object-position: center top;
+  border-radius: 4px; border: 0.5px solid var(--border2);
+  margin-bottom: 1.25rem; display: block;
+  opacity: 0.7; transition: opacity 0.25s;
+}
+.proj-card:hover .proj-proof { opacity: 1; }
+.proj-stack { display: flex; flex-wrap: wrap; gap: 5px; }
+.ptag { font-size: 10px; color: var(--text-soft); background: var(--border); padding: 3px 9px; border-radius: 1px; border: 0.5px solid var(--border2); }
+
+/* Proyek kolaborasi tim — tampilan dibedakan dari proyek individu */
+.proj-card.team { border-left: 3px solid var(--gold); }
+.proj-collab {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 9px; letter-spacing: 0.5px; color: var(--text-soft);
+  background: var(--bg3); border: 0.5px solid var(--border2);
+  padding: 3px 10px 3px 8px; border-radius: 20px; margin-bottom: 0.75rem;
+}
+.proj-collab svg { width: 10px; height: 10px; stroke: var(--gold); flex-shrink: 0; }
+
+/* ══════════════════════════════════════
+   DOKUMENTASI — Marquee photo cards
+   setelah proyek, sebelum pendidikan
+══════════════════════════════════════ */
+#dokumentasi { padding: 5.5rem 3rem; border-bottom: 0.5px solid var(--border); overflow: hidden; }
+
+.doc-marquee-outer { overflow: hidden; position: relative; }
+.doc-marquee-outer::before,
+.doc-marquee-outer::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+}
+.doc-marquee-outer::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+.doc-marquee-outer::after  { right: 0; background: linear-gradient(to left,  var(--bg), transparent); }
+
+.doc-marquee-track {
+  display: flex; gap: 16px;
+  width: max-content;
+  animation: marquee-rtl 30s linear infinite;
+  padding: 8px 0 12px;
+}
+.doc-marquee-track:hover { animation-play-state: paused; }
+
+/* Photo card */
+.doc-card {
+  flex-shrink: 0;
+  width: 280px; height: 190px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  border: 0.5px solid var(--border2);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s;
+}
+/* dim overlay on siblings when one is hovered */
+.doc-marquee-track:has(.doc-card:hover) .doc-card { filter: brightness(0.4); }
+.doc-marquee-track:has(.doc-card:hover) .doc-card:hover { filter: brightness(1); transform: scale(1.06); box-shadow: 0 16px 40px rgba(36,31,25,0.22), 0 0 0 1.5px rgba(156,122,61,0.35); z-index: 10; }
+
+.doc-card img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.4s ease;
+}
+.doc-card:hover img { transform: scale(1.05); }
+
+/* Placeholder when no image */
+.doc-placeholder {
+  width: 100%; height: 100%;
+  background: var(--bg3);
+  border: 0.5px dashed var(--border3);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px;
+}
+.doc-placeholder svg { width: 32px; height: 32px; stroke: var(--muted2); }
+.doc-placeholder span { font-size: 11px; color: var(--muted2); letter-spacing: 1px; text-align: center; line-height: 1.5; }
+
+.doc-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%);
+  opacity: 0; transition: opacity 0.3s;
+  display: flex; align-items: flex-end; padding: 14px;
+}
+.doc-card:hover .doc-overlay { opacity: 1; }
+.doc-label { font-size: 11px; color: #fff; letter-spacing: 0.5px; }
 
 /* EDUCATION */
 .edu-item { display: grid; grid-template-columns: 220px 1fr; gap: 3rem; padding: 2.5rem 0; border-bottom: 0.5px solid var(--border); }
 .edu-item:first-child { padding-top: 0; }
 .edu-item:last-child { border-bottom: none; }
 .edu-year { font-size: 10px; color: var(--muted); letter-spacing: 1.5px; }
-.edu-school { font-size: 18px; font-weight: 500; color: #fff; margin-bottom: 0.3rem; }
+.edu-school { font-size: 18px; font-weight: 500; color: var(--text); margin-bottom: 0.3rem; }
 .edu-major { font-size: 11px; color: var(--gold); margin-bottom: 1.25rem; letter-spacing: 1px; }
 .edu-notes { display: grid; gap: 0.5rem; }
-.edu-note { font-size: 13px; color: #555; padding-left: 1.25rem; position: relative; line-height: 1.6; }
+.edu-note { font-size: 13px; color: var(--text-soft); padding-left: 1.25rem; position: relative; line-height: 1.6; }
 .edu-note::before { content: '—'; position: absolute; left: 0; color: var(--muted2); }
-.edu-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 11px; color: var(--gold);
-  background: rgba(192,160,96,0.08); border: 0.5px solid rgba(192,160,96,0.2);
-  padding: 4px 12px; border-radius: 1px; margin-top: 4px;
-}
+.edu-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; color: var(--gold); background: rgba(156,122,61,0.08); border: 0.5px solid rgba(156,122,61,0.2); padding: 4px 12px; border-radius: 1px; margin-top: 4px; }
 .edu-badge::before { content: '★'; font-size: 9px; }
 
 /* CONTACT */
 #contact { text-align: center; padding: 7rem 3rem; }
-.contact-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 500; color: #fff; letter-spacing: -1px; margin-bottom: 1rem; line-height: 1.1; }
+.contact-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 500; color: var(--text); letter-spacing: -1px; margin-bottom: 1rem; line-height: 1.1; }
 .contact-title span { color: var(--gold); }
 .contact-sub { font-size: 14px; color: var(--muted); max-width: 380px; margin: 0 auto 3rem; line-height: 1.8; }
 .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
-.clink {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 12px; color: #666; text-decoration: none;
-  padding: 11px 24px; border: 0.5px solid var(--border);
-  transition: all 0.25s; border-radius: 1px; letter-spacing: 0.5px;
-}
+.clink { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--text-soft); text-decoration: none; padding: 11px 24px; border: 0.5px solid var(--border); transition: all 0.25s; border-radius: 1px; letter-spacing: 0.5px; }
 .clink:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
 
-/* FOOTER */
-footer {
-  padding: 1.5rem 3rem;
-  border-top: 0.5px solid var(--border);
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 1rem;
-}
+footer { padding: 1.5rem 3rem; border-top: 0.5px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
 footer p { font-size: 11px; color: var(--muted2); letter-spacing: 1px; }
 footer span { color: var(--gold); }
 
@@ -321,13 +349,14 @@ footer span { color: var(--gold); }
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-photo-wrap { display: none; }
-  .about-grid, .skills-wrap, .exp-item, .edu-item { grid-template-columns: 1fr; gap: 2rem; }
+  .about-grid, .exp-item, .edu-item { grid-template-columns: 1fr; gap: 2rem; }
   .proj-grid { grid-template-columns: repeat(2, 1fr); }
+  .soft-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
   nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
-  #hero, section { padding: 5.5rem 1.5rem 3rem; }
+  #hero, section, #dokumentasi { padding: 5.5rem 1.5rem 3rem; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
   .proj-grid { grid-template-columns: 1fr; }
   footer { flex-direction: column; align-items: flex-start; }
@@ -351,7 +380,7 @@ footer span { color: var(--gold); }
   <a class="nav-cta" href="mailto:ridhofaisal114@gmail.com">HUBUNGI SAYA</a>
 </nav>
 
-<!-- HERO -->
+<!-- ══════════ HERO ══════════ -->
 <section id="hero">
   <div class="hero-bg-text">RIDHO</div>
   <div class="hero-inner">
@@ -371,16 +400,8 @@ footer span { color: var(--gold); }
     </div>
     <div class="hero-photo-wrap">
       <div class="hero-photo">
-        <!--
-          =====================================================
-          GANTI PATH FOTO DI BAWAH INI:
-          Contoh: src="./assets/foto-profil.jpg"
-                  src="./images/afr.png"
-          Pastikan path relatif dari file HTML ini.
-          =====================================================
-        -->
-        <img src="./PasFoto.png" alt="Ahmad Faisal RidhoTullah"
-             onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;\'><div style=\'width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#1a1a1a,#141414);border:1.5px solid #252525;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:500;color:#c0a060;\'>AFR</div><p style=\'font-size:10px;color:#5a5a5a;letter-spacing:1px;text-align:center;\'>Ganti path foto<br>di kode HTML</p></div>'">
+        <img src="./foto3.jpeg" alt="Ahmad Faisal RidhoTullah"
+             onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;\'><div style=\'width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#f4efe5,#ece4d3);border:1.5px solid #ddd2ba;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:500;color:#9c7a3d;\'>AFR</div><p style=\'font-size:10px;color:#9a9082;letter-spacing:1px;text-align:center;\'>Ganti path foto<br>di kode HTML</p></div>'">
       </div>
       <div class="hero-photo-corner tl"></div>
       <div class="hero-photo-corner br"></div>
@@ -394,13 +415,10 @@ footer span { color: var(--gold); }
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ══════════ ABOUT ══════════ -->
 <section id="about">
-  <div class="sec-header reveal">
-    <span class="sec-num">01 —</span>
-    <div class="sec-divider"></div>
-  </div>
-  <h2 class="sec-title reveal" style="margin-bottom:2.5rem;">Tentang Saya</h2>
+  <div class="sec-header reveal"><span class="sec-num">01 —</span><div class="sec-divider"></div></div>
+  <h2 class="sec-title reveal">Tentang Saya</h2>
   <div class="about-grid">
     <div class="about-text reveal-left">
       <p>Saya <strong>Ahmad Faisal RidhoTullah</strong>, seorang pengembang teknologi muda dari Jember yang memiliki ketertarikan luas di dunia digital — mulai dari merakit perangkat IoT, membangun aplikasi mobile dan web, hingga merancang antarmuka dan materi visual.</p>
@@ -415,136 +433,58 @@ footer span { color: var(--gold); }
       <div class="info-row"><span class="info-label">LOKASI</span><span class="info-val">Arjasa, Jember, Jawa Timur</span></div>
       <div class="info-row"><span class="info-label">EMAIL</span><span class="info-val"><a href="mailto:ridhofaisal114@gmail.com">ridhofaisal114@gmail.com</a></span></div>
       <div class="info-row"><span class="info-label">TELEPON</span><span class="info-val"><a href="tel:+6285230414211">+62 852 3041 4211</a></span></div>
-      <div class="info-row"><span class="info-label">LINKEDIN</span><span class="info-val"><a href="https://linkedin.com/in/ahmadfaisal-ridhotullah-855281376" target="_blank">Ahmad Faisal RidhoTullah ↗</a></span></div>
+      <div class="info-row"><span class="info-label">LINKEDIN</span><span class="info-val"><a href="https://linkedin.com/in/ahmad-faisal-ridhotullah-855281376" target="_blank">Ahmad Faisal RidhoTullah ↗</a></span></div>
       <div class="info-row"><span class="info-label">PENDIDIKAN</span><span class="info-val">D3 Teknik Komputer<br>Politeknik Negeri Jember (2023–2026)</span></div>
       <div class="info-row"><span class="info-label">STATUS</span><span class="info-val"><span class="status-dot"></span><span style="color:var(--gold)">Terbuka untuk kerja / freelance</span></span></div>
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
+<!-- ══════════ SKILLS ══════════ -->
 <section id="skills">
-  <div class="sec-header reveal">
-    <span class="sec-num">02 —</span>
-    <div class="sec-divider"></div>
-  </div>
-  <h2 class="sec-title reveal" style="margin-bottom:2.5rem;">Keahlian</h2>
+  <div class="sec-header reveal"><span class="sec-num">02 —</span><div class="sec-divider"></div></div>
+  <h2 class="sec-title reveal">Keahlian</h2>
   <div class="skills-wrap">
+
+    <!-- HARD SKILLS — marquee cards -->
     <div class="reveal-left">
       <p class="skills-col-title">HARD SKILLS</p>
-
-      <div class="skill-item">
-        <div class="skill-row">
-          <div class="skill-name-wrap">
-            <span class="skill-icon"><i data-lucide="cpu"></i></span>
-            <span class="skill-name">IoT — ESP32 / Arduino</span>
-          </div>
-          <span class="skill-pct">90%</span>
+      <div class="skill-marquee-outer">
+        <div class="skill-marquee-track" id="skill-track">
+          <!-- Row 1 (duplikat otomatis via JS) -->
+          <div class="skill-card"><div class="skill-card-icon"><i data-lucide="cpu"></i></div><span class="skill-card-name">IoT / ESP32 Arduino</span></div>
+          <div class="skill-card"><div class="skill-card-icon"><i data-lucide="code-2"></i></div><span class="skill-card-name">HTML &amp; CSS</span></div>
+          <div class="skill-card"><div class="skill-card-icon"><i data-lucide="server"></i></div><span class="skill-card-name">PHP CodeIgniter</span></div>
+          <div class="skill-card"><div class="skill-card-icon"><i data-lucide="smartphone"></i></div><span class="skill-card-name">Flutter &amp; React Native</span></div>
+          <div class="skill-card"><div class="skill-card-icon"><i data-lucide="terminal"></i></div><span class="skill-card-name">Python</span></div>
+          <div class="skill-card"><div class="skill-card-icon"><i data-lucide="database"></i></div><span class="skill-card-name">MySQL &amp; Firebase</span></div>
+          <div class="skill-card"><div class="skill-card-icon"><i data-lucide="pen-tool"></i></div><span class="skill-card-name">CorelDRAW Canva</span></div>
+          <div class="skill-card"><div class="skill-card-icon"><i data-lucide="git-branch"></i></div><span class="skill-card-name">Git &amp; GitHub</span></div>
         </div>
-        <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
       </div>
-
-      <div class="skill-item">
-        <div class="skill-row">
-          <div class="skill-name-wrap">
-            <span class="skill-icon"><i data-lucide="code-2"></i></span>
-            <span class="skill-name">HTML &amp; CSS</span>
-          </div>
-          <span class="skill-pct">88%</span>
-        </div>
-        <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
-      </div>
-
-      <div class="skill-item">
-        <div class="skill-row">
-          <div class="skill-name-wrap">
-            <span class="skill-icon"><i data-lucide="server"></i></span>
-            <span class="skill-name">PHP — CodeIgniter</span>
-          </div>
-          <span class="skill-pct">82%</span>
-        </div>
-        <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
-      </div>
-
-      <div class="skill-item">
-        <div class="skill-row">
-          <div class="skill-name-wrap">
-            <span class="skill-icon"><i data-lucide="smartphone"></i></span>
-            <span class="skill-name">Flutter &amp; React Native</span>
-          </div>
-          <span class="skill-pct">78%</span>
-        </div>
-        <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
-      </div>
-
-      <div class="skill-item">
-        <div class="skill-row">
-          <div class="skill-name-wrap">
-            <span class="skill-icon"><i data-lucide="terminal"></i></span>
-            <span class="skill-name">Python</span>
-          </div>
-          <span class="skill-pct">75%</span>
-        </div>
-        <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
-      </div>
-
-      <div class="skill-item">
-        <div class="skill-row">
-          <div class="skill-name-wrap">
-            <span class="skill-icon"><i data-lucide="database"></i></span>
-            <span class="skill-name">MySQL &amp; Firebase</span>
-          </div>
-          <span class="skill-pct">82%</span>
-        </div>
-        <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
-      </div>
-
-      <div class="skill-item">
-        <div class="skill-row">
-          <div class="skill-name-wrap">
-            <span class="skill-icon"><i data-lucide="pen-tool"></i></span>
-            <span class="skill-name">CorelDRAW &amp; Canva</span>
-          </div>
-          <span class="skill-pct">85%</span>
-        </div>
-        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-      </div>
-
-      <div class="skill-item">
-        <div class="skill-row">
-          <div class="skill-name-wrap">
-            <span class="skill-icon"><i data-lucide="git-branch"></i></span>
-            <span class="skill-name">Git &amp; GitHub</span>
-          </div>
-          <span class="skill-pct">72%</span>
-        </div>
-        <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
-      </div>
-
     </div>
-    <div class="reveal-right">
+
+    <!-- SOFT SKILLS — static icon cards, di bawah hard skills -->
+    <div class="reveal">
       <p class="skills-col-title">SOFT SKILLS</p>
       <div class="soft-grid">
-        <div class="soft-item delay-1"><span class="soft-dot"></span>Berpikir Kreatif</div>
-        <div class="soft-item delay-1"><span class="soft-dot"></span>Pemecahan Masalah</div>
-        <div class="soft-item delay-2"><span class="soft-dot"></span>Kerja Tim</div>
-        <div class="soft-item delay-2"><span class="soft-dot"></span>Kerja Mandiri</div>
-        <div class="soft-item delay-3"><span class="soft-dot"></span>Cepat Belajar</div>
-        <div class="soft-item delay-3"><span class="soft-dot"></span>Antusias Belajar</div>
-        <div class="soft-item delay-4"><span class="soft-dot"></span>Komunikatif</div>
-        <div class="soft-item delay-4"><span class="soft-dot"></span>Detail-oriented</div>
+        <div class="soft-card"><div class="soft-card-icon"><i data-lucide="lightbulb"></i></div><span class="soft-card-name">Berpikir Kreatif</span></div>
+        <div class="soft-card"><div class="soft-card-icon"><i data-lucide="puzzle"></i></div><span class="soft-card-name">Pemecahan Masalah</span></div>
+        <div class="soft-card"><div class="soft-card-icon"><i data-lucide="users"></i></div><span class="soft-card-name">Kerja Tim</span></div>
+        <div class="soft-card"><div class="soft-card-icon"><i data-lucide="user-check"></i></div><span class="soft-card-name">Kerja Mandiri</span></div>
+        <div class="soft-card"><div class="soft-card-icon"><i data-lucide="zap"></i></div><span class="soft-card-name">Cepat Belajar</span></div>
+        <div class="soft-card"><div class="soft-card-icon"><i data-lucide="book-open"></i></div><span class="soft-card-name">Antusias Belajar</span></div>
+        <div class="soft-card"><div class="soft-card-icon"><i data-lucide="message-circle"></i></div><span class="soft-card-name">Komunikatif</span></div>
+        <div class="soft-card"><div class="soft-card-icon"><i data-lucide="search"></i></div><span class="soft-card-name">Detail-oriented</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
+<!-- ══════════ EXPERIENCE ══════════ -->
 <section id="experience">
-  <div class="sec-header reveal">
-    <span class="sec-num">03 —</span>
-    <div class="sec-divider"></div>
-  </div>
-  <h2 class="sec-title reveal" style="margin-bottom:2.5rem;">Pengalaman</h2>
+  <div class="sec-header reveal"><span class="sec-num">03 —</span><div class="sec-divider"></div></div>
+  <h2 class="sec-title reveal">Pengalaman</h2>
 
   <div class="exp-item reveal">
     <div class="exp-meta">
@@ -590,24 +530,18 @@ footer span { color: var(--gold); }
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- ══════════ PROJECTS ══════════ -->
 <section id="projects">
-  <div class="sec-header reveal">
-    <span class="sec-num">04 —</span>
-    <div class="sec-divider"></div>
-  </div>
-  <h2 class="sec-title reveal" style="margin-bottom:2.5rem;">Proyek</h2>
+  <div class="sec-header reveal"><span class="sec-num">04 —</span><div class="sec-divider"></div></div>
+  <h2 class="sec-title reveal">Proyek</h2>
   <div class="proj-grid reveal">
 
-    <!-- PROJECT 1: NAKULA -->
     <div class="proj-card featured">
       <div class="proj-icon"><i data-lucide="brain-circuit"></i></div>
       <p class="proj-badge">IOT &amp; AI — TUGAS AKHIR 2026</p>
       <h3 class="proj-name">Sistem NAKULA — Klasifikasi Telur Ayam Berbasis IoT &amp; CNN</h3>
-      
-        <!-- FOTO BUKTI PROYEK — UNCOMMENT SAAT FOTO SIAP: -->
-        <img class="proj-proof" src="./nakulaa.jpg" alt="Sistem NAKULA">
-     
+      <!-- Foto bukti: ganti src dengan path file Anda -->
+      <img class="proj-proof" src="./nakulaa.jpg" alt="Sistem NAKULA" onerror="this.style.display='none'">
       <p class="proj-desc">Sistem cerdas mengklasifikasi kualitas telur menggunakan CNN terintegrasi IoT. Backend Python Flask, database MySQL, dan aplikasi mobile React Native untuk monitoring real-time.</p>
       <div class="proj-stack">
         <span class="ptag">IoT</span><span class="ptag">CNN / ML</span><span class="ptag">Python Flask</span>
@@ -615,15 +549,12 @@ footer span { color: var(--gold); }
       </div>
     </div>
 
-    <!-- PROJECT 2: E-PRESENSI -->
     <div class="proj-card featured">
       <div class="proj-icon"><i data-lucide="scan-line"></i></div>
       <p class="proj-badge">IOT — FULL STACK — 2025</p>
       <h3 class="proj-name">E-Presensi Siswa Berbasis RFID</h3>
-      
-        <!-- FOTO BUKTI PROYEK — UNCOMMENT SAAT FOTO SIAP: -->
-        <img class="proj-proof" src="./absen.jpg" alt="E-Presensi RFID">
-     
+      <!-- Foto bukti: ganti src dengan path file Anda -->
+      <img class="proj-proof" src="./absen.jpg" alt="E-Presensi RFID" onerror="this.style.display='none'">
       <p class="proj-desc">Sistem presensi digital RFID + ESP32 live di dua sekolah. Dikerjakan end-to-end: hardware, UI/UX, website monitoring, aplikasi mobile orang tua, dan manajemen database.</p>
       <div class="proj-stack">
         <span class="ptag">ESP32</span><span class="ptag">RFID</span><span class="ptag">PHP CodeIgniter</span>
@@ -631,80 +562,196 @@ footer span { color: var(--gold); }
       </div>
     </div>
 
-    <!-- PROJECT 3: ROASTER KOPI -->
     <div class="proj-card">
       <div class="proj-icon"><i data-lucide="flame"></i></div>
       <p class="proj-badge">IOT — 2026</p>
       <h3 class="proj-name">Sistem Roaster Kopi Berbasis IoT</h3>
-      
-        <!-- FOTO BUKTI PROYEK — UNCOMMENT SAAT FOTO SIAP: -->
-        <img class="proj-proof" src="./roster.png" alt="Roaster Kopi IoT">
-     
+      <!-- Foto bukti: ganti src dengan path file Anda -->
+      <img class="proj-proof" src="./roster.png" alt="Roaster Kopi IoT" onerror="this.style.display='none'">
       <p class="proj-desc">Sistem otomatis roasting kopi dengan kontrol presisi via IoT. Dilengkapi aplikasi Flutter untuk monitoring dan kontrol sistem dari jarak jauh.</p>
       <div class="proj-stack">
-        <span class="ptag">IoT</span><span class="ptag">Flutter</span>
-        <span class="ptag">Arduino</span><span class="ptag">ESP32</span>
+        <span class="ptag">IoT</span><span class="ptag">Flutter</span><span class="ptag">Arduino</span><span class="ptag">ESP32</span>
       </div>
     </div>
 
-    <!-- PROJECT 4: DASHBOARD -->
-    <div class="proj-card">
-      <div class="proj-icon"><i data-lucide="layout-dashboard"></i></div>
-      <p class="proj-badge">WEB DEVELOPMENT</p>
-      <h3 class="proj-name">Dashboard Monitoring Presensi Sekolah</h3>
-      
-        <!-- FOTO BUKTI PROYEK — UNCOMMENT SAAT FOTO SIAP: -->
-        <img class="proj-proof" src="./dash.png" alt="Dashboard Presensi">
-     
-      <p class="proj-desc">Dashboard web real-time untuk administrator sekolah memantau dan mengelola data presensi. Terhubung langsung dengan perangkat RFID dan menghasilkan laporan otomatis.</p>
+    <div class="proj-card team">
+      <div class="proj-collab"><i data-lucide="users"></i>Kolaborasi Tim — CV. E-Solusindo</div>
+      <div class="proj-icon"><i data-lucide="thermometer"></i></div>
+      <p class="proj-badge">IOT — WEB DEVELOPMENT</p>
+      <h3 class="proj-name">Monitoring Suhu Real-time</h3>
+      <!-- Foto bukti: ganti src dengan path file Anda -->
+      <img class="proj-proof" src="./suhu2.jpg" alt="Monitoring Suhu Real-time" onerror="this.style.display='none'">
+      <p class="proj-desc">Sistem pemantauan suhu berbasis IoT yang membaca data sensor secara langsung lalu menampilkannya di website, lengkap dengan histori data dan notifikasi otomatis saat suhu melewati ambang batas.</p>
       <div class="proj-stack">
-        <span class="ptag">HTML/CSS</span><span class="ptag">PHP</span>
-        <span class="ptag">MySQL</span><span class="ptag">Real-time</span>
+        <span class="ptag">ESP32</span><span class="ptag">DHT11</span><span class="ptag">IoT</span><span class="ptag">MySQL</span><span class="ptag">JavaScript</span>
       </div>
     </div>
 
-    <!-- PROJECT 5: DESAIN GRAFIS -->
+    <div class="proj-card team">
+      <div class="proj-collab"><i data-lucide="users"></i>Kolaborasi Tim — CV. E-Solusindo</div>
+      <div class="proj-icon"><i data-lucide="sprout"></i></div>
+      <p class="proj-badge">IOT — MOBILE APP</p>
+      <h3 class="proj-name">Gaul Hidroponik — Monitoring Tanaman Hidroponik</h3>
+      <!-- Foto bukti: ganti src dengan path file Anda -->
+      <img class="proj-proof" src="./gaul11.jpg" alt="Gaul Hidroponik" onerror="this.style.display='none'">
+      <p class="proj-desc">Sistem monitoring tanaman hidroponik berbasis IoT untuk memantau dan mengontrol kualitas air, kadar PPM, dan nutrisi secara real-time melalui aplikasi mobile.</p>
+      <div class="proj-stack">
+        <span class="ptag">Flutter</span><span class="ptag">ESP32</span><span class="ptag">Firebase</span><span class="ptag">Cloud</span>
+      </div>
+    </div>
+
+    <div class="proj-card team">
+      <div class="proj-collab"><i data-lucide="users"></i>Kolaborasi Tim — CV. E-Solusindo</div>
+      <div class="proj-icon"><i data-lucide="clipboard-check"></i></div>
+      <p class="proj-badge">MOBILE APP — 2025</p>
+      <h3 class="proj-name">Aplikasi Absensi Pegawai SMPN 3 Jember</h3>
+      <!-- Foto bukti: ganti src dengan path file Anda -->
+      <img class="proj-proof" src="./app31.png" alt="Absensi Pegawai SMPN 3 Jember" onerror="this.style.display='none'">
+      <p class="proj-desc">Aplikasi presensi pegawai berbasis mobile dengan validasi lokasi — absen hanya dapat dilakukan saat berada di area sekolah, dan aktivitas kehadirannya dapat dipantau langsung oleh wali murid.</p>
+      <div class="proj-stack">
+        <span class="ptag">Flutter</span><span class="ptag">Dart</span><span class="ptag">MySQL</span><span class="ptag">REST API</span>
+      </div>
+    </div>
+
+    <div class="proj-card team">
+      <div class="proj-collab"><i data-lucide="users"></i>Kolaborasi Tim — CV. E-Solusindo</div>
+      <div class="proj-icon"><i data-lucide="school"></i></div>
+      <p class="proj-badge">WEB DEVELOPMENT</p>
+      <h3 class="proj-name">Website Presensi SMPN 1 &amp; 3 Jember</h3>
+      <!-- Foto bukti: ganti src dengan path file Anda -->
+      <img class="proj-proof" src="./web1.png" alt="Website Presensi SMPN 1 & 3 Jember" onerror="this.style.display='none'">
+      <p class="proj-desc">Platform presensi resmi untuk dua sekolah negeri di Jember, lengkap dengan dashboard admin, statistik kehadiran, dan integrasi langsung dengan perangkat RFID.</p>
+      <div class="proj-stack">
+        <span class="ptag">CodeIgniter</span><span class="ptag">MySQL</span><span class="ptag">Bootstrap</span><span class="ptag">RFID</span>
+      </div>
+    </div>
+
+    <div class="proj-card team">
+      <div class="proj-collab"><i data-lucide="users"></i>Kolaborasi Tim — CV. E-Solusindo</div>
+      <div class="proj-icon"><i data-lucide="stethoscope"></i></div>
+      <p class="proj-badge">WEB DEVELOPMENT — CMS</p>
+      <h3 class="proj-name">7 Website Klinik Jawa Timur</h3>
+      <!-- Foto bukti: ganti src dengan path file Anda -->
+      <img class="proj-proof" src="./k2.png" alt="7 Website Klinik Jawa Timur" onerror="this.style.display='none'">
+      <p class="proj-desc">Mengembangkan dan mengelola tujuh website klinik kesehatan di Jawa Timur, mencakup sistem manajemen konten (CMS) dan layanan informasi digital untuk pasien.</p>
+      <div class="proj-stack">
+        <span class="ptag">CodeIgniter</span><span class="ptag">CMS</span><span class="ptag">MySQL</span><span class="ptag">UI/UX</span>
+      </div>
+    </div>
+
     <div class="proj-card">
       <div class="proj-icon"><i data-lucide="palette"></i></div>
       <p class="proj-badge">GRAPHIC DESIGN — BRANDING</p>
       <h3 class="proj-name">Desain Promosi &amp; Branding Digital</h3>
       <!--
-        FOTO BUKTI PROYEK — UNCOMMENT SAAT FOTO SIAP:
-        <img class="proj-proof" src="./assets/proj-desain.jpg" alt="Desain Promosi">
+        Foto bukti — uncomment saat foto siap:
+        <img class="proj-proof" src="./assets/proj-desain.jpg" alt="Desain Promosi" onerror="this.style.display='none'">
       -->
       <p class="proj-desc">Material desain grafis untuk promosi dan branding — poster digital, konten media sosial, dan materi cetak. Dikerjakan selama magang di Crefa 17 Digital Printing.</p>
       <div class="proj-stack">
-        <span class="ptag">CorelDRAW</span><span class="ptag">Canva</span>
-        <span class="ptag">Branding</span><span class="ptag">Media Sosial</span>
+        <span class="ptag">CorelDRAW</span><span class="ptag">Canva</span><span class="ptag">Branding</span><span class="ptag">Media Sosial</span>
       </div>
     </div>
 
-    <!-- PROJECT 6: FREELANCE WEB -->
-    <div class="proj-card">
-      <div class="proj-icon"><i data-lucide="wrench"></i></div>
-      <p class="proj-badge">KONTRIBUSI FREELANCE</p>
-      <h3 class="proj-name">Revisi &amp; Pengembangan Website Klien</h3>
-      <!--
-        FOTO BUKTI PROYEK — UNCOMMENT SAAT FOTO SIAP:
-        <img class="proj-proof" src="./assets/proj-freelance.jpg" alt="Website Klien">
-      -->
-      <p class="proj-desc">Berkontribusi pada pengembangan dan perbaikan beberapa website klien mitra CV. E-Solusindo — mulai dari perbaikan UI, bug fixing, hingga penambahan fitur baru.</p>
-      <div class="proj-stack">
-        <span class="ptag">PHP</span><span class="ptag">HTML/CSS</span>
-        <span class="ptag">MySQL</span><span class="ptag">Maintenance</span>
-      </div>
-    </div>
 
   </div>
 </section>
 
-<!-- EDUCATION -->
-<section id="education">
-  <div class="sec-header reveal">
-    <span class="sec-num">05 —</span>
-    <div class="sec-divider"></div>
+<!-- ══════════ DOKUMENTASI ══════════ -->
+<section id="dokumentasi">
+  <div class="sec-header reveal"><span class="sec-num">04.5 —</span><div class="sec-divider"></div></div>
+  <h2 class="sec-title reveal">Dokumentasi Proyek</h2>
+
+  <div class="doc-marquee-outer reveal">
+    <div class="doc-marquee-track" id="doc-track">
+
+      <!--
+        ════════════════════════════════════════════════
+        CARA MENAMBAH FOTO:
+        1. Ganti src="./namafoto.jpg" dengan path file Anda
+        2. Ganti teks di .doc-label sesuai keterangan foto
+        3. Duplikat blok <div class="doc-card"> untuk foto baru
+        ════════════════════════════════════════════════
+      -->
+
+      <!-- FOTO 1 — ganti path -->
+      <div class="doc-card">
+        <img src="./nakulaa.jpg" alt="Dokumentasi 1" onerror="this.style.display='none';this.parentElement.querySelector('.doc-placeholder').style.display='flex'">
+        <div class="doc-placeholder" style="display:none">
+          <i data-lucide="image"></i>
+          <span>Ganti path<br>src foto</span>
+        </div>
+        <div class="doc-overlay"><span class="doc-label">Sistem NAKULA</span></div>
+      </div>
+
+      <!-- FOTO 2 — ganti path -->
+      <div class="doc-card">
+        <img src="./absen.jpg" alt="Dokumentasi 2" onerror="this.style.display='none';this.parentElement.querySelector('.doc-placeholder').style.display='flex'">
+        <div class="doc-placeholder" style="display:none">
+          <i data-lucide="image"></i>
+          <span>Ganti path<br>src foto</span>
+        </div>
+        <div class="doc-overlay"><span class="doc-label">E-Presensi RFID</span></div>
+      </div>
+
+      <!-- FOTO 3 — ganti path -->
+      <div class="doc-card">
+        <img src="./roster.png" alt="Dokumentasi 3" onerror="this.style.display='none';this.parentElement.querySelector('.doc-placeholder').style.display='flex'">
+        <div class="doc-placeholder" style="display:none">
+          <i data-lucide="image"></i>
+          <span>Ganti path<br>src foto</span>
+        </div>
+        <div class="doc-overlay"><span class="doc-label">Roaster Kopi IoT</span></div>
+      </div>
+
+      <!-- FOTO 4 — ganti path -->
+      <div class="doc-card">
+        <img src="./dash.png" alt="Dokumentasi 4" onerror="this.style.display='none';this.parentElement.querySelector('.doc-placeholder').style.display='flex'">
+        <div class="doc-placeholder" style="display:none">
+          <i data-lucide="image"></i>
+          <span>Ganti path<br>src foto</span>
+        </div>
+        <div class="doc-overlay"><span class="doc-label">Website Presensi SMPN 1 &amp; 3</span></div>
+      </div>
+
+      <!-- FOTO 5 — placeholder, ganti path saat foto siap -->
+      <!-- <div class="doc-card">
+        <img src="./web1.png" alt="Dokumentasi 5" onerror="this.style.display='none';this.parentElement.querySelector('.doc-placeholder').style.display='flex'">
+        <div class="doc-placeholder" style="display:none">
+          <i data-lucide="image"></i>
+          <span>Tambah foto<br>dokumentasi</span>
+        </div>
+        <div class="doc-overlay"><span class="doc-label">Desain &amp; Branding</span></div>
+      </div> -->
+
+      <!-- FOTO 6 — placeholder -->
+      <!-- <div class="doc-card">
+        <img src="./1.jpg" alt="Dokumentasi 6" onerror="this.style.display='none';this.parentElement.querySelector('.doc-placeholder').style.display='flex'">
+        <div class="doc-placeholder" style="display:none">
+          <i data-lucide="image"></i>
+          <span>Tambah foto<br>dokumentasi</span>
+        </div>
+        <div class="doc-overlay"><span class="doc-label">Proyek Lainnya</span></div>
+      </div> -->
+
+      <!-- FOTO 7 — placeholder -->
+      <!-- <div class="doc-card">
+        <img src="./2.jpg" alt="Dokumentasi 7" onerror="this.style.display='none';this.parentElement.querySelector('.doc-placeholder').style.display='flex'">
+        <div class="doc-placeholder" style="display:none">
+          <i data-lucide="image"></i>
+          <span>Tambah foto<br>dokumentasi</span>
+        </div>
+        <div class="doc-overlay"><span class="doc-label">Proyek Lainnya</span></div>
+      </div> -->
+
+    </div>
   </div>
-  <h2 class="sec-title reveal" style="margin-bottom:2.5rem;">Pendidikan &amp; Penghargaan</h2>
+</section>
+
+<!-- ══════════ EDUCATION ══════════ -->
+<section id="education">
+  <div class="sec-header reveal"><span class="sec-num">05 —</span><div class="sec-divider"></div></div>
+  <h2 class="sec-title reveal">Pendidikan &amp; Penghargaan</h2>
 
   <div class="edu-item reveal">
     <div><p class="edu-year">2023 — 2026</p></div>
@@ -714,7 +761,7 @@ footer span { color: var(--gold); }
       <div class="edu-notes">
         <div class="edu-badge">Juara 3 IT FEST 2025 Techtonic: Shifting Ideas into Impact</div>
         <p class="edu-note">Sertifikasi Junior Cyber Security — VSGA — BNSP</p>
-        <p class="edu-note">LKMM Pra Tingkat Dasar - Bakor Pemandu Polije</p>
+        <p class="edu-note">LKMM Pra Tingkat Dasar — Bakor Pemandu Polije</p>
         <p class="edu-note">Webinar: Unlocking Skills — Machine Learning Models for Better Future</p>
         <p class="edu-note">Aktif mengembangkan proyek IoT, mobile app, dan web</p>
       </div>
@@ -737,15 +784,15 @@ footer span { color: var(--gold); }
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ══════════ CONTACT ══════════ -->
 <section id="contact">
-  <p class="sec-num" style="text-align:center; display:block; margin-bottom:1rem;">06 — KONTAK</p>
+  <p class="sec-num" style="text-align:center;display:block;margin-bottom:1rem;">06 — KONTAK</p>
   <h2 class="contact-title reveal">Mari <span>Berkolaborasi</span></h2>
   <p class="contact-sub reveal">Terbuka untuk peluang kerja, freelance, maupun kolaborasi. Saya senang mendengar ide-ide menarik Anda.</p>
   <div class="contact-links reveal">
     <a class="clink" href="mailto:ridhofaisal114@gmail.com">✉ ridhofaisal114@gmail.com</a>
     <a class="clink" href="tel:+6285230414211">☎ +62 852 3041 4211</a>
-    <a class="clink" href="https://linkedin.com/in/ahmadfaisal-ridhotullah-855281376" target="_blank">in LinkedIn</a>
+    <a class="clink" href="https://linkedin.com/in/ahmad-faisal-ridhotullah-855281376" target="_blank">in LinkedIn</a>
   </div>
   <a class="btn-gold reveal" href="mailto:ridhofaisal114@gmail.com">Kirim Pesan →</a>
 </section>
@@ -756,14 +803,34 @@ footer span { color: var(--gold); }
 </footer>
 
 <script>
-/* INIT LUCIDE ICONS */
 lucide.createIcons();
+
+/* Duplicate skill & doc cards for seamless loop */
+function duplicateTrack(id) {
+  const track = document.getElementById(id);
+  if (!track) return;
+  const clone = track.cloneNode(true);
+  clone.querySelectorAll('[id]').forEach(el => el.removeAttribute('id'));
+  /* Clone harus dimasukkan KE DALAM track yang sama (bukan jadi sibling baru),
+     supaya kartu menyambung di satu baris yang sama untuk loop marquee mulus. */
+  while (clone.firstChild) {
+    track.appendChild(clone.firstChild);
+  }
+  lucide.createIcons();
+}
+duplicateTrack('skill-track');
+duplicateTrack('doc-track');
+
+/* Duplicate doc-placeholder icons after re-init */
+document.querySelectorAll('.doc-placeholder i[data-lucide]').forEach(el => {
+  if (!el.querySelector('svg')) lucide.createIcons({ nodes: [el] });
+});
 
 /* CURSOR GLOW */
 const glow = document.getElementById('cursor-glow');
 document.addEventListener('mousemove', e => {
   glow.style.left = e.clientX + 'px';
-  glow.style.top = e.clientY + 'px';
+  glow.style.top  = e.clientY + 'px';
 });
 
 /* NAV SCROLL */
@@ -773,58 +840,27 @@ window.addEventListener('scroll', () => {
 });
 
 /* TYPING EFFECT */
-const roles = [
-  'IoT Engineer & Developer',
-  'UI/UX Designer',
-  'Graphic Designer',
-  'Mobile App Developer'
-];
+const roles = ['IoT Engineer & Developer','UI/UX Designer','Graphic Designer','Mobile App Developer'];
 let roleIdx = 0, charIdx = 0, deleting = false;
 const typedEl = document.getElementById('typed-text');
 function typeWriter() {
-  const current = roles[roleIdx];
+  const cur = roles[roleIdx];
   if (!deleting) {
-    typedEl.textContent = current.slice(0, ++charIdx);
-    if (charIdx === current.length) {
-      deleting = true;
-      setTimeout(typeWriter, 2000);
-      return;
-    }
+    typedEl.textContent = cur.slice(0, ++charIdx);
+    if (charIdx === cur.length) { deleting = true; setTimeout(typeWriter, 2000); return; }
   } else {
-    typedEl.textContent = current.slice(0, --charIdx);
-    if (charIdx === 0) {
-      deleting = false;
-      roleIdx = (roleIdx + 1) % roles.length;
-    }
+    typedEl.textContent = cur.slice(0, --charIdx);
+    if (charIdx === 0) { deleting = false; roleIdx = (roleIdx + 1) % roles.length; }
   }
   setTimeout(typeWriter, deleting ? 40 : 70);
 }
 typeWriter();
 
 /* SCROLL REVEAL */
-const allReveal = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      revealObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12 });
-allReveal.forEach(r => revealObs.observe(r));
-
-/* SKILL BAR ANIMATION */
-const skillObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.skill-fill').forEach(bar => {
-        bar.style.width = bar.dataset.width + '%';
-      });
-      skillObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.3 });
-document.querySelectorAll('.skills-wrap').forEach(s => skillObs.observe(s));
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(r => revealObs.observe(r));
 </script>
 </body>
 </html>
