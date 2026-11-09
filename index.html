@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ahmad Faisal RidhoTullah | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0e151d;--s1:#151e29;--s2:#1d2836;--ln:#27344a;--tx:#e8edf3;--t2:#9fb0c4;--ac:#d09a45;--ac2:#e7b866;--on:#1a1206;--sh:0 18px 40px rgba(0,0,0,.45)}
+[data-theme=light]{--bg:#f4f6f9;--s1:#fff;--s2:#eaeff5;--ln:#d9e1ea;--tx:#111c2b;--t2:#4d5f75;--ac:#a8701c;--ac2:#8f5d12;--on:#fff;--sh:0 14px 32px rgba(17,28,43,.14)}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:Figtree,sans-serif;background:var(--bg);color:var(--tx);line-height:1.7;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}button{font-family:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+.w{max-width:1140px;margin:0 auto;padding:0 1.5rem}
+section{padding:5rem 0}
+.hd2{margin-bottom:2.2rem;max-width:620px}.hd2 p{color:var(--t2);margin-top:.6rem}
+h2{font-size:clamp(2rem,3.6vw,2.8rem);font-weight:700}
+#pg{position:fixed;top:0;left:0;height:3px;width:0;background:var(--ac);z-index:300}
+nav{position:fixed;inset:0 0 auto;z-index:200;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--ln)}
+nav .w{display:flex;align-items:center;height:64px;gap:.8rem}
+.lg{font:800 1.3rem 'Bricolage Grotesque'}.lg b{color:var(--ac)}
+.nl{display:flex;gap:1.3rem;list-style:none;margin-left:auto}
+.nl a{font-size:13.5px;color:var(--t2);padding:6px 0;border-bottom:2px solid transparent;transition:color .2s}
+.nl a:hover,.nl a.on{color:var(--tx);border-color:var(--ac)}
+.ib{width:40px;height:40px;border-radius:50%;border:1px solid var(--ln);background:var(--s1);cursor:pointer;font-size:16px;display:inline-grid;place-items:center;transition:.2s;flex:none}
+.ib:hover{border-color:var(--ac);color:var(--ac)}#mb{display:none}
+.bt{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;border:1px solid var(--ac);cursor:pointer;transition:.2s}
+.b1{background:var(--ac);color:var(--on)}.b1:hover{background:var(--ac2)}
+.b2{background:none;color:var(--ac)}.b2:hover{background:color-mix(in srgb,var(--ac) 12%,transparent)}
+#hero{padding:8.5rem 0 4.5rem}
+.hg{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.hg>*{animation:up .8s both}.hg>:nth-child(2){animation-delay:.18s}
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+.s0{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--t2);margin-bottom:1.2rem}
+.dot{width:8px;height:8px;border-radius:50%;background:#34d399;animation:pl 2s infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(52,211,153,.6)}70%{box-shadow:0 0 0 8px transparent}}
+h1{font-size:clamp(3rem,7vw,5.6rem);font-weight:800}
+.ty{font-size:1.3rem;color:var(--ac);margin:1rem 0;min-height:1.9em;font-weight:500}
+.ty i{display:inline-block;width:2px;height:1.1em;background:currentColor;margin-left:3px;vertical-align:middle;animation:bl 1s step-end infinite}
+@keyframes bl{50%{opacity:0}}
+.hp{color:var(--t2);max-width:520px;margin-bottom:1.8rem}
+.ha{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2rem}
+.fx{display:flex;gap:2rem;flex-wrap:wrap;padding-top:1.4rem;border-top:1px solid var(--ln);font-size:13px;color:var(--t2)}
+.fx b{display:block;font:700 1.7rem 'Bricolage Grotesque';color:var(--tx)}
+.cl{position:relative;aspect-ratio:4/5;max-width:370px;margin:0 auto;width:100%;cursor:pointer}
+.fr{position:absolute;inset:0;border-radius:8px;overflow:hidden;background:var(--s2);border:6px solid var(--tx);box-shadow:var(--sh);transition:transform .7s cubic-bezier(.3,1.2,.4,1)}
+.fr img{width:100%;height:100%;object-fit:cover;display:block}
+.fr[data-p="0"]{transform:rotate(-2deg);z-index:4}
+.fr[data-p="1"]{transform:translate(22px,14px) rotate(4deg);z-index:3}
+.fr[data-p="2"]{transform:translate(-20px,24px) rotate(-6deg);z-index:2}
+.fr[data-p="3"]{transform:translate(30px,34px) rotate(8deg);z-index:1}
+.ph0{height:100%;display:grid;place-content:center;text-align:center;font:800 3rem 'Bricolage Grotesque';color:var(--ac)}
+.ph0 small{font:400 12px Figtree;color:var(--t2);padding:0 1rem}
+.cap{text-align:center;color:var(--t2);font-size:13px;margin-top:3.2rem}
+.ag{display:grid;grid-template-columns:1.3fr 1fr;gap:3.5rem}
+.ab p{color:var(--t2);margin-bottom:1rem}.ab strong{color:var(--tx);font-weight:600}
+.if{background:var(--s1);border:1px solid var(--ln);border-radius:14px;padding:.4rem 1.4rem;align-self:start}
+.if div{display:flex;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--ln);font-size:14px}.if div:last-child{border:0}
+.if span{width:86px;flex:none;color:var(--t2)}.if a{color:var(--ac)}
+.tb{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem}
+.tab{padding:8px 16px;border-radius:99px;border:1px solid var(--ln);background:none;font-size:13px;cursor:pointer;color:var(--t2);transition:.2s}
+.tab:hover{color:var(--tx);border-color:var(--ac)}.tab.on{background:var(--ac);border-color:var(--ac);color:var(--on)}
+.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:12px}
+.sk{background:var(--s1);border:1px solid var(--ln);border-radius:12px;padding:1.1rem .6rem;text-align:center;transition:.2s}
+.sk:hover{border-color:var(--ac);transform:translateY(-3px)}
+.sk img,.lt{width:46px;height:46px;margin:0 auto .65rem;display:grid;place-items:center}
+.sk img{object-fit:contain;background:#fff;border-radius:10px;padding:7px}
+.lt{border-radius:10px;background:var(--s2);color:var(--ac);font-weight:800;font-size:15px}
+.sk b{display:block;font-size:13px;font-weight:600}.sk small{color:var(--t2);font-size:12px}
+.sf{margin-top:2.4rem}.sf h3{font-size:1.25rem;margin-bottom:1rem}
+.ch{display:flex;flex-wrap:wrap;gap:10px}
+.ch span{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:8px;background:var(--s1);border:1px solid var(--ln);font-size:14px}
+.ch svg,.ak svg{width:16px;height:16px;stroke:var(--ac)}
+.tl{border-left:2px solid var(--ln);margin-left:6px;padding-left:2rem}
+.ti{position:relative;padding-bottom:2.2rem}.ti:last-child{padding-bottom:0}
+.ti:before{content:'';position:absolute;left:calc(-2rem - 7px);top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 4px var(--bg)}
+.ti small{color:var(--ac);font-weight:600;font-size:13px}.ti h3{font-size:1.4rem;margin:.2rem 0}
+.ti h4{color:var(--t2);font:500 15px Figtree;letter-spacing:0;margin-bottom:.8rem}
+.ti ul{padding-left:1.1rem;color:var(--t2);font-size:14.5px}.ti li{margin-bottom:.35rem}
+.pgd{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pc{border-radius:10px;overflow:hidden;background:var(--s1);border:1px solid var(--ln);cursor:pointer;display:flex;flex-direction:column;transition:transform .25s,border-color .25s,box-shadow .25s}
+.pc:hover,.pc:focus-visible{transform:translateY(-5px);border-color:var(--ac);box-shadow:var(--sh)}
+.pc:first-child{grid-column:span 2}.pc:first-child .cv{aspect-ratio:16/8}
+.cv{position:relative;aspect-ratio:16/10;background:linear-gradient(135deg,var(--s2),var(--s1));display:grid;place-items:center;color:var(--ac);overflow:hidden}
+.cv svg{width:40px;height:40px}
+.cv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}.pc:hover .cv img{transform:scale(1.06)}
+.bd{position:absolute;top:12px;left:12px;z-index:1;font-size:12px;font-weight:600;padding:4px 11px;border-radius:99px;background:var(--bg);color:var(--ac)}
+.pb{padding:1.2rem 1.3rem 1.3rem;display:flex;flex-direction:column;flex:1}.pb h3{font-size:1.15rem;margin-bottom:.45rem}
+.pb p{font-size:14px;color:var(--t2);margin-bottom:.9rem;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.tg{display:flex;flex-wrap:wrap;gap:6px}.tg span{font-size:12px;padding:3px 10px;border-radius:6px;background:var(--s2);color:var(--t2)}
+.ov{position:fixed;inset:0;background:rgba(6,10,15,.78);backdrop-filter:blur(6px);z-index:500;display:none;align-items:center;justify-content:center;padding:1rem}
+.ov.on{display:flex;animation:fi .25s}@keyframes fi{from{opacity:0}}
+.md{background:var(--s1);border:1px solid var(--ln);border-radius:14px;width:100%;max-width:860px;max-height:92vh;overflow:auto;position:relative;animation:pop .3s}
+@keyframes pop{from{transform:scale(.95) translateY(10px)}}
+.x{position:absolute;top:14px;right:14px;z-index:5}
+.cr{position:relative}
+.cs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab}.cs::-webkit-scrollbar,.gl::-webkit-scrollbar{display:none}
+.sl{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:16/9;background:var(--s2);display:grid;place-items:center;color:var(--t2)}
+.sl img{width:100%;height:100%;object-fit:cover;user-select:none;cursor:zoom-in}
+.ar{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:22px;cursor:pointer;z-index:3}.ar:hover{background:var(--ac);color:var(--on)}
+.a1{left:12px}.a2{right:12px}
+.dts{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:6px}
+.dts i{width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.5);transition:.25s}.dts i.on{background:#fff;width:22px}
+.mb2{padding:1.6rem 2rem 2rem}.mb2 h3{font-size:1.8rem;margin:.9rem 0 .6rem}.mb2 p{color:var(--t2);margin-bottom:1.2rem}
+.mb2 h4{font-size:1rem;margin-bottom:.5rem}.mb2 ul{padding-left:1.1rem;color:var(--t2);font-size:14.5px;margin-bottom:1.3rem}
+#lbx{flex-direction:column;gap:.8rem;z-index:600}#lbx img{max-width:92vw;max-height:80vh;border-radius:8px}#lbc{color:#fff;font-size:14px}
+.gh{display:flex;justify-content:space-between;align-items:end;gap:1rem}.gh .tg{gap:8px}
+.gl{overflow-x:auto;scrollbar-width:none;cursor:grab;padding:16px 0;user-select:none}
+.gt{display:flex;gap:16px;width:max-content}
+.gc{position:relative;width:300px;height:200px;flex:none;border-radius:10px;overflow:hidden;border:1px solid var(--ln);transition:transform .35s cubic-bezier(.3,1.4,.5,1),filter .3s,box-shadow .3s}
+.gc img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.gc span{position:absolute;inset:auto 0 0;padding:1.6rem 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:13px;opacity:0;transition:.3s}
+.gt:has(.gc:hover) .gc{filter:brightness(.4) saturate(.6)}
+.gt:has(.gc:hover) .gc:hover{filter:none;transform:scale(1.07);box-shadow:var(--sh);z-index:2}.gc:hover span{opacity:1}
+.em{color:var(--t2);padding:2rem 0}
+.eg{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:2.2rem}
+.ec{background:var(--s1);border:1px solid var(--ln);border-radius:14px;padding:1.5rem}
+.ec small{color:var(--ac);font-weight:600}.ec h3{font-size:1.3rem;margin:.2rem 0}.ec p{color:var(--t2);font-size:14px}
+.aw{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.ak{display:flex;gap:12px;padding:1rem;border:1px solid var(--ln);border-radius:10px;background:var(--s1)}
+.ak svg{flex:none;width:22px;height:22px;margin-top:2px}.ak b{display:block;font-size:14px}.ak span{font-size:13px;color:var(--t2)}
+.cg{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem}
+.cx{display:grid;gap:10px;margin-top:1.4rem}.cx a,.cx button{display:flex;align-items:center;gap:12px;padding:13px 16px;border:1px solid var(--ln);border-radius:10px;background:var(--s1);cursor:pointer;font-size:14px;text-align:left;transition:.2s}
+.cx a:hover,.cx button:hover{border-color:var(--ac)}.cx svg{width:18px;height:18px;stroke:var(--ac)}
+form{display:grid;gap:12px}input,textarea{width:100%;padding:13px 15px;border-radius:8px;border:1px solid var(--ln);background:var(--s1);color:var(--tx);font:inherit}
+input:focus,textarea:focus{border-color:var(--ac);outline:0}textarea{min-height:140px;resize:vertical}
+footer{border-top:1px solid var(--ln);padding:1.6rem 0;color:var(--t2);font-size:13px}footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+#up{position:fixed;right:20px;bottom:20px;opacity:0;pointer-events:none;transition:.3s;z-index:150}#up.on{opacity:1;pointer-events:auto}
+@media(max-width:900px){.hg,.ag,.cg,.eg{grid-template-columns:1fr}.pgd{grid-template-columns:1fr 1fr}.cl{margin-bottom:1rem}
+.nl{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);padding:1rem 1.5rem;border-bottom:1px solid var(--ln);gap:.3rem;margin-left:0}nav.open .nl{display:flex}#mb{display:inline-grid}#tb{margin-left:auto}}
+@media(max-width:600px){.pgd{grid-template-columns:1fr}.pc:first-child{grid-column:auto}.gc{width:240px;height:165px}.mb2{padding:1.3rem}section{padding:3.5rem 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="pg"></div>
+<nav><div class="w"><a class="lg" href="#hero">AFR<b>.</b></a>
+<ul class="nl"><li><a href="#about">Tentang</a></li><li><a href="#skills">Keahlian</a></li><li><a href="#experience">Pengalaman</a></li><li><a href="#projects">Proyek</a></li><li><a href="#gallery">Dokumentasi</a></li><li><a href="#education">Pendidikan</a></li><li><a href="#contact">Kontak</a></li></ul>
+<button class="ib" id="tb" aria-label="Ganti tema"></button><button class="ib" id="mb" aria-label="Menu">☰</button></div></nav>
+
+<header id="hero"><div class="w hg">
+<div>
+<div class="s0"><span class="dot"></span>Terbuka untuk kerja dan freelance</div>
+<h1>Ahmad Faisal<br>RidhoTullah</h1>
+<div class="ty"><span id="ty"></span><i></i></div>
+<p class="hp">Lulusan D3 Teknik Komputer Politeknik Negeri Jember. Saya membangun sistem terintegrasi dari perangkat IoT, backend, web, dan aplikasi mobile, sampai desain antarmuka dan grafisnya.</p>
+<div class="ha"><a class="bt b1" href="#projects">Lihat proyek</a><a class="bt b2" href="./CV_AHMAD_FAISAL_RIDHOTULLAH.pdf" download>Unduh CV</a></div>
+<div class="fx"><div><b>3</b>tahun kuliah</div><div><b id="np">0</b>proyek</div><div><b>2</b>magang</div><div><b>5</b>penghargaan</div></div>
+</div>
+<div><div class="cl" id="cl" title="Klik untuk ganti foto"></div><p class="cap" id="cap"></p></div>
+</div></header>
+
+<section id="about"><div class="w">
+<div class="hd2"><h2>Tentang saya</h2></div>
+<div class="ag"><div class="ab">
+<p>Saya <strong>Ahmad Faisal RidhoTullah</strong>, pengembang muda dari Jember dengan minat luas di dunia digital: merakit perangkat IoT, membuat aplikasi mobile dan web, sampai merancang antarmuka dan materi visual.</p>
+<p>Menurut saya teknologi yang baik harus bekerja dengan benar, mudah dipakai, dan enak dilihat. Karena itu teknik, desain, dan logika selalu saya gabungkan di setiap proyek.</p>
+<p>Saya terbiasa bekerja <strong>mandiri maupun dalam tim</strong>, cepat belajar, dan senang mencoba teknologi baru.</p></div>
+<div class="if"><div><span>Lokasi</span>Arjasa, Jember, Jawa Timur</div><div><span>Email</span><a href="mailto:ridhofaisal114@gmail.com">ridhofaisal114@gmail.com</a></div><div><span>Telepon</span><a href="tel:+6285230414211">+62 852 3041 4211</a></div><div><span>LinkedIn</span><a href="https://linkedin.com/in/ahmad-faisal-ridhotullah-855281376" target="_blank" rel="noopener">Ahmad Faisal Ridhotullah</a></div><div><span>Pendidikan</span>D3 Teknik Komputer, Polije (2023 sampai 2026)</div></div>
+</div></div></section>
+
+<section id="skills"><div class="w">
+<div class="hd2"><h2>Keahlian</h2><p>Teknologi dan alat yang saya pakai sehari-hari. Pilih kategori untuk menyaringnya.</p></div>
+<div class="tb" id="skt"></div><div class="sg" id="sg"></div>
+<div class="sf"><h3>Soft skill</h3><div class="ch" id="ch"></div></div>
+</div></section>
+
+<section id="experience"><div class="w">
+<div class="hd2"><h2>Pengalaman</h2></div>
+<div class="tl">
+<div class="ti"><small>Agustus sampai Desember 2025</small><h3>IoT Engineer dan Full-Stack Developer</h3><h4>CV. E-Solusindo, Software House (Magang)</h4><ul>
+<li>Membangun sistem E-Presensi siswa berbasis RFID dan ESP32 untuk SMP Negeri 3 Jember dan SMP Negeri 1 Jember.</li>
+<li>Mengerjakan sistem dari ujung ke ujung: hardware IoT, desain UI/UX, frontend, backend, dan database.</li>
+<li>Membuat website monitoring presensi dan aplikasi mobile untuk orang tua siswa.</li>
+<li>Mengerjakan revisi dan pengembangan website klien mitra perusahaan sesuai permintaan pelanggan.</li>
+<li>Ikut memasang dan menerapkan sistem langsung di lingkungan sekolah.</li></ul></div>
+<div class="ti"><small>2023</small><h3>Graphic Design Intern</h3><h4>Crefa 17 Digital Printing (Magang)</h4><ul>
+<li>Membantu membuat desain promosi digital dan kebutuhan branding.</li>
+<li>Bekerja sama dengan tim dalam produksi media promosi.</li>
+<li>Mengoperasikan software desain grafis untuk kebutuhan pelanggan.</li></ul></div>
+</div></div></section>
+
+<section id="projects"><div class="w">
+<div class="hd2"><h2>Proyek</h2><p>Klik kartu untuk melihat deskripsi dan foto proyek. Foto di dalamnya bisa digeser.</p></div>
+<div class="tb" id="prt"></div><div class="pgd" id="pgd"></div>
+</div></section>
+
+<section id="gallery"><div class="w">
+<div class="gh"><div class="hd2" style="margin:0"><h2>Dokumentasi proyek</h2><p>Geser dengan mouse atau jari. Arahkan kursor ke foto untuk menyorotnya, klik untuk memperbesar.</p></div>
+<div class="tg"><button class="ib ga" data-d="-1" aria-label="Geser kiri">‹</button><button class="ib ga" data-d="1" aria-label="Geser kanan">›</button></div></div>
+<div class="gl" id="gl"><div class="gt" id="gt"></div></div>
+</div></section>
+
+<section id="education"><div class="w">
+<div class="hd2"><h2>Pendidikan dan penghargaan</h2></div>
+<div class="eg">
+<div class="ec"><small>2023 sampai 2026</small><h3>Politeknik Negeri Jember</h3><p>D3 Teknik Komputer. Aktif mengembangkan proyek IoT, aplikasi mobile, dan website.</p></div>
+<div class="ec"><small>2020 sampai 2023</small><h3>SMK Negeri 1 Jember</h3><p>Jurusan Multimedia. Magang desain grafis di Crefa 17 Digital Printing.</p></div></div>
+<div class="aw" id="aw"></div>
+</div></section>
+
+<section id="contact"><div class="w cg">
+<div><h2>Mari berkolaborasi</h2><p style="color:var(--t2);margin-top:.7rem">Punya proyek atau lowongan yang cocok? Kirim pesan, saya balas secepatnya.</p>
+<div class="cx"><a href="https://wa.me/6285230414211" target="_blank" rel="noopener"><i data-lucide="message-circle"></i>WhatsApp +62 852 3041 4211</a>
+<a href="https://linkedin.com/in/ahmad-faisal-ridhotullah-855281376" target="_blank" rel="noopener"><i data-lucide="briefcase"></i>LinkedIn</a>
+<button id="cp"><i data-lucide="mail"></i><span>Salin email ridhofaisal114@gmail.com</span></button></div></div>
+<form id="cf"><input name="n" placeholder="Nama Anda" required><input name="e" type="email" placeholder="Email Anda" required><textarea name="m" placeholder="Tulis pesan Anda" required></textarea><button class="bt b1" type="submit">Kirim lewat email</button></form>
+</div></section>
+
+<footer><div class="w"><span>© 2026 Ahmad Faisal RidhoTullah</span><span>Jember, Jawa Timur</span></div></footer>
+<button class="ib" id="up" aria-label="Ke atas">↑</button>
+<div class="ov" id="ov"><div class="md" id="md"></div></div>
+<div class="ov" id="lbx"><button class="ib x" data-c="lb" aria-label="Tutup">✕</button><button class="ar a1" id="lp" aria-label="Sebelumnya">‹</button><img id="lbi" alt=""><button class="ar a2" id="ln" aria-label="Berikutnya">›</button><div id="lbc"></div></div>
+
+<script>
+const $=(s,e=document)=>e.querySelector(s),$$=(s,e=document)=>[...e.querySelectorAll(s)];
+const U=s=>'./'+s,ld=s=>new Promise(r=>{const i=new Image();i.onload=()=>r(s);i.onerror=()=>r(null);i.src=U(s)});
+const ic=()=>window.lucide&&lucide.createIcons(),RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* ===== DATA: EDIT DI SINI (nama file foto relatif terhadap index.html) ===== */
+const PH=[['foto3.jpeg','Ahmad Faisal RidhoTullah'],['w6.png','Ahmad Faisal RidhoTullah'],['w5.png','Ahmad Faisal RidhoTullah'],['w7.png','Ahmad Faisal RidhoTullah']]; // foto pribadi (maks 4)
+const D='https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/';
+const CL={iot:'IoT',mobile:'Mobile',web:'Web',data:'Database',desain:'Desain',tools:'Tools'};
+// [nama, kategori, logo]. Ganti logo dengan file lokal, misal './logo/esp32.png'. Tanpa logo = huruf awal.
+const SK=[['ESP32','iot'],['Arduino','iot',D+'arduino/arduino-original.svg'],['Python','iot',D+'python/python-original.svg'],['Flutter','mobile',D+'flutter/flutter-original.svg'],['React Native','mobile',D+'react/react-original.svg'],['PHP','web',D+'php/php-original.svg'],['CodeIgniter','web',D+'codeigniter/codeigniter-plain.svg'],['HTML5','web',D+'html5/html5-original.svg'],['CSS3','web',D+'css3/css3-original.svg'],['MySQL','data',D+'mysql/mysql-original.svg'],['Firebase','data',D+'firebase/firebase-plain.svg'],['Canva','desain',D+'canva/canva-original.svg'],['CorelDRAW','desain'],['Git','tools',D+'git/git-original.svg'],['GitHub','tools',D+'github/github-original.svg'],['MS Office','tools']];
+const SF=[['lightbulb','Berpikir kreatif'],['puzzle','Troubleshooting'],['users','Kerja tim'],['user-check','Bisa bekerja mandiri'],['zap','Cepat belajar'],['book-open','Semangat belajar hal baru']];
+// im = daftar foto proyek (yang tidak ditemukan otomatis disembunyikan)
+const PR=[
+{t:'Sistem NAKULA: Klasifikasi Kualitas Telur Ayam Berbasis IoT dan CNN',l:'IoT dan AI',c:'iot',ic:'brain-circuit',lb:'Tugas Akhir 2026',d:'Sistem cerdas yang mengklasifikasi kualitas telur ayam dengan CNN dan terintegrasi dengan perangkat IoT. Dilengkapi backend Python Flask, database MySQL, dan aplikasi mobile untuk monitoring serta kontrol.',p:['Klasifikasi kualitas telur ayam menggunakan CNN','Backend server dengan Python Flask','Integrasi sistem dengan database MySQL','Aplikasi mobile React Native untuk monitoring dan kontrol','Pengujian dan troubleshooting sistem'],s:['IoT','CNN','Python Flask','MySQL','React Native','ESP32'],im:['nakulaa.jpg','nakulaa-2.jpg','nakulaa-3.jpg']},
+{t:'E-Presensi Siswa Berbasis RFID',l:'IoT Full Stack',c:'iot web mobile',ic:'scan-line',lb:'2025',d:'Sistem presensi digital RFID dan ESP32 yang sudah berjalan di SMP Negeri 3 dan SMP Negeri 1 Jember. Saya mengerjakan hardware, UI/UX, website monitoring, aplikasi mobile orang tua, dan database.',p:['Perangkat presensi RFID berbasis ESP32','Website monitoring untuk mengelola data presensi','Aplikasi mobile agar orang tua bisa memantau presensi siswa','Perancangan UI/UX, frontend, backend, dan database','Diterapkan langsung di lingkungan sekolah'],s:['ESP32','RFID','PHP CodeIgniter','MySQL','React Native','UI/UX'],im:['absen.jpg','absen-2.jpg','absen-3.jpg']},
+{t:'Sistem Roaster Kopi Berbasis IoT',l:'IoT',c:'iot mobile',ic:'flame',lb:'2026',d:'Sistem roasting kopi otomatis dengan kontrol presisi lewat perangkat IoT. Dilengkapi aplikasi Flutter untuk monitoring dan kontrol dari jarak jauh.',p:['Kontrol proses roasting secara presisi','Monitoring dan kontrol jarak jauh lewat aplikasi Flutter','Perangkat berbasis Arduino dan ESP32'],s:['IoT','Flutter','Arduino','ESP32'],im:['roster.png','roster-2.png','roster-3.png']},
+{t:'Monitoring Suhu Real-time',l:'IoT dan Web',c:'iot web',ic:'thermometer',lb:'Kolaborasi tim',tm:1,d:'Sistem pemantauan suhu berbasis IoT yang membaca sensor secara langsung dan menampilkannya di website, lengkap dengan histori data dan notifikasi otomatis saat suhu melewati ambang batas.',p:['Pembacaan data sensor suhu secara langsung','Tampilan real-time di website','Histori data suhu','Notifikasi otomatis saat melewati ambang batas'],s:['ESP32','DHT11','IoT','MySQL','JavaScript'],im:['suhu2.jpg','suhu2-2.jpg','suhu2-3.jpg']},
+{t:'Gaul Hidroponik: Monitoring Tanaman Hidroponik',l:'IoT dan Mobile',c:'iot mobile',ic:'sprout',lb:'Kolaborasi tim',tm:1,d:'Sistem monitoring tanaman hidroponik berbasis IoT untuk memantau dan mengontrol kualitas air, kadar PPM, dan nutrisi secara real-time lewat aplikasi mobile.',p:['Monitoring kualitas air, kadar PPM, dan nutrisi','Pemantauan dan kontrol real-time dari aplikasi mobile','Data tersimpan di cloud (Firebase)'],s:['Flutter','ESP32','Firebase','Cloud'],im:['gaul11.jpg','gaul11-2.jpg','gaul11-3.jpg']},
+{t:'Aplikasi Absensi Pegawai SMPN 3 Jember',l:'Mobile',c:'mobile',ic:'clipboard-check',lb:'Kolaborasi tim, 2025',tm:1,d:'Aplikasi presensi pegawai dengan validasi lokasi. Absen hanya bisa dilakukan di area sekolah, dan aktivitas kehadirannya bisa dipantau wali murid.',p:['Validasi lokasi: absen hanya di area sekolah','Kehadiran dapat dipantau wali murid','Terhubung ke database MySQL lewat REST API'],s:['Flutter','Dart','MySQL','REST API'],im:['app31.png','app31-2.png','app31-3.png']},
+{t:'Website Presensi SMPN 1 dan 3 Jember',l:'Web',c:'web',ic:'school',lb:'Kolaborasi tim',tm:1,d:'Platform presensi untuk dua sekolah negeri di Jember, lengkap dengan dashboard admin, statistik kehadiran, dan integrasi langsung dengan perangkat RFID.',p:['Dashboard admin','Statistik kehadiran','Integrasi langsung dengan perangkat RFID'],s:['CodeIgniter','MySQL','Bootstrap','RFID'],im:['web1.png','web1-2.png','web1-3.png']},
+{t:'7 Website Klinik Jawa Timur',l:'Web',c:'web',ic:'stethoscope',lb:'Kolaborasi tim',tm:1,d:'Mengembangkan dan mengelola tujuh website klinik kesehatan di Jawa Timur, mencakup sistem manajemen konten (CMS) dan layanan informasi digital untuk pasien, termasuk revisi sesuai permintaan klien.',p:['Tujuh website klinik di Jawa Timur','Sistem manajemen konten (CMS)','Layanan informasi digital untuk pasien','Revisi dan perbaikan sesuai permintaan klien'],s:['CodeIgniter','CMS','MySQL','UI/UX'],im:['k2.png','k2-2.png','k2-3.png']},
+{t:'Desain Promosi dan Branding Digital',l:'Desain',c:'desain',ic:'palette',lb:'Crefa 17, 2023',d:'Materi desain grafis untuk promosi dan branding: poster digital, konten media sosial, dan materi cetak. Dikerjakan saat magang di Crefa 17 Digital Printing.',p:['Poster dan konten media sosial','Materi cetak untuk pelanggan','Kebutuhan branding'],s:['CorelDRAW','Canva','Branding'],im:['desain-1.jpg','desain-2.jpg','desain-3.jpg']}];
+// galeri dokumentasi: [file, keterangan]. Tambah baris baru untuk foto baru.
+const GL=[['nakulaa.jpg','Sistem NAKULA'],['absen.jpg','E-Presensi RFID'],['roster.png','Roaster Kopi IoT'],['suhu2.jpg','Monitoring Suhu'],['gaul11.jpg','Gaul Hidroponik'],['app31.png','Absensi Pegawai SMPN 3'],['web1.png','Website Presensi'],['k2.png','Website Klinik'],['dash.png','Dashboard Monitoring'],['dok-1.jpg','Dokumentasi 1'],['dok-2.jpg','Dokumentasi 2']];
+const AW=[['trophy','Juara 1','National Innovation Week Competition 1.0, UNIDA Gontor'],['trophy','Juara 1','Pharmacy National Health Competition, Akademi Farmasi Pontianak'],['trophy','Juara 3','INJECTION, Institut Teknologi Surabaya'],['trophy','Juara 3','IT FEST 2025 Techtonic: Shifting Ideas into Impact'],['award','Finalis','Festival Inovasi dan Kewirausahaan Siswa Indonesia (FIKSI)'],['shield-check','Sertifikasi','Junior Cyber Security, VSGA BNSP'],['badge-check','LKMM Pra Tingkat Dasar','Bakor Pemandu Polije'],['presentation','Webinar','Unlocking Skills: Machine Learning Models for Better Future']];
+
+/* ===== HELPERS ===== */
+function tabs(el,list,cb){el.innerHTML=list.map(([k,v],i)=>`<button class="tab${i?'':' on'}" data-k="${k}">${v}</button>`).join('');el.onclick=e=>{const b=e.target.closest('.tab');if(!b)return;$$('.tab',el).forEach(x=>x.classList.toggle('on',x==b));cb(b.dataset.k)}}
+function dg(el,snap){let mv=0;el.addEventListener('mousedown',e=>{if(e.button)return;let lx=e.pageX;const x0=lx;mv=0;el.dragging=1;el.style.cursor='grabbing';if(snap)el.style.scrollSnapType='none';e.preventDefault();
+const mm=v=>{mv=Math.max(mv,Math.abs(v.pageX-x0));el.scrollLeft-=v.pageX-lx;lx=v.pageX},
+mu=()=>{removeEventListener('mousemove',mm);removeEventListener('mouseup',mu);el.dragging=0;el.style.cursor='';if(snap){const w=el.clientWidth;el.scrollTo({left:Math.round(el.scrollLeft/w)*w,behavior:'smooth'});setTimeout(()=>el.style.scrollSnapType='',400)}};
+addEventListener('mousemove',mm);addEventListener('mouseup',mu)});
+el.addEventListener('click',e=>{if(mv>5){e.stopPropagation();e.preventDefault();mv=0}},true)}
+
+/* ===== TEMA, NAV, SCROLL ===== */
+const root=document.documentElement,tb=$('#tb');
+try{const s=localStorage.getItem('th');if(s)root.dataset.theme=s}catch(e){}
+const ti=()=>tb.textContent=root.dataset.theme=='dark'?'☀':'☾';ti();
+tb.onclick=()=>{const d=root.dataset.theme=='dark'?'light':'dark';root.dataset.theme=d;try{localStorage.setItem('th',d)}catch(e){}ti()};
+$('#mb').onclick=()=>$('nav').classList.toggle('open');$$('.nl a').forEach(a=>a.onclick=()=>$('nav').classList.remove('open'));
+addEventListener('scroll',()=>{const h=document.documentElement;$('#pg').style.width=scrollY/(h.scrollHeight-innerHeight)*100+'%';$('#up').classList.toggle('on',scrollY>600)},{passive:true});
+$('#up').onclick=()=>scrollTo({top:0});
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('.nl a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')=='#'+e.target.id))}),{rootMargin:'-45% 0px -50%'});
+$$('section[id]').forEach(s=>so.observe(s));
+
+/* ===== HERO: TYPING + KOLASE FOTO ===== */
+const RL=['IoT Engineer','Full-Stack Developer','Mobile App Developer','UI/UX dan Graphic Designer'];let ri=0,ci=0,del=0;
+(function ty(){const c=RL[ri];if(RM){$('#ty').textContent=c;return}
+$('#ty').textContent=c.slice(0,del?--ci:++ci);let t=del?35:70;
+if(!del&&ci==c.length){del=1;t=1800}else if(del&&!ci){del=0;ri=(ri+1)%RL.length}setTimeout(ty,t)})();
+$('#np').textContent=PR.length;
+(async()=>{const ok=(await Promise.all(PH.map(p=>ld(p[0]).then(r=>r&&p)))).filter(Boolean).slice(0,4),cl=$('#cl');
+if(!ok.length){cl.innerHTML='<div class="fr" data-p="0"><div class="ph0">AFR<small>Tambahkan foto pada daftar PH di script</small></div></div>';return}
+cl.innerHTML=ok.map((p,i)=>`<div class="fr" data-p="${i}"><img src="${U(p[0])}" alt="${p[1]}"></div>`).join('');
+const fr=$$('.fr',cl),N=fr.length;let top=0,hv=0;$('#cap').textContent=ok[0][1];
+const go=()=>{fr.forEach(f=>f.dataset.p=(+f.dataset.p+N-1)%N);top=(top+1)%N;$('#cap').textContent=ok[top][1]};
+if(N>1){cl.onclick=go;cl.onmouseenter=()=>hv=1;cl.onmouseleave=()=>hv=0;if(!RM)setInterval(()=>{if(!hv&&!document.hidden)go()},4500)}})();
+
+/* ===== KEAHLIAN ===== */
+function rs(f){$('#sg').innerHTML=SK.filter(s=>f=='all'||s[1]==f).map(([n,c,i])=>`<div class="sk">${i?`<img src="${i}" alt="${n}" loading="lazy" onerror="this.outerHTML='<div class=lt>${n.slice(0,2)}</div>'">`:`<div class="lt">${n.slice(0,2)}</div>`}<b>${n}</b><small>${CL[c]}</small></div>`).join('')}
+tabs($('#skt'),[['all','Semua'],...Object.entries(CL)],rs);rs('all');
+$('#ch').innerHTML=SF.map(([i,t])=>`<span><i data-lucide="${i}"></i>${t}</span>`).join('');
+$('#aw').innerHTML=AW.map(([i,t,s])=>`<div class="ak"><i data-lucide="${i}"></i><div><b>${t}</b><span>${s}</span></div></div>`).join('');
+
+/* ===== PROYEK + MODAL ===== */
+function rp(f){$('#pgd').innerHTML=PR.map((p,i)=>[p,i]).filter(([p])=>f=='all'||p.c.split(' ').includes(f)).map(([p,i])=>`<article class="pc" data-i="${i}" tabindex="0" role="button" aria-label="Buka ${p.t}"><div class="cv"><span class="bd">${p.l}</span><i data-lucide="${p.ic}"></i><img src="${U(p.im[0])}" alt="${p.t}" loading="lazy" onerror="this.remove()"></div><div class="pb"><h3>${p.t}</h3><p>${p.d}</p><div class="tg">${p.s.slice(0,4).map(s=>`<span>${s}</span>`).join('')}</div></div></article>`).join('');ic()}
+tabs($('#prt'),[['all','Semua'],['iot','IoT'],['mobile','Mobile'],['web','Web'],['desain','Desain']],rp);rp('all');
+$('#pgd').onclick=e=>{const c=e.target.closest('.pc');if(c)om(+c.dataset.i)};
+$('#pgd').onkeydown=e=>{if(e.key=='Enter'){const c=e.target.closest('.pc');if(c)om(+c.dataset.i)}};
+async function om(i){const p=PR[i],m=$('#md'),ok=(await Promise.all(p.im.map(ld))).filter(Boolean),n=ok.length;
+m.innerHTML=`<button class="ib x" data-c="md" aria-label="Tutup">✕</button><div class="cr"><div class="cs" id="cs">${n?ok.map((s,k)=>`<div class="sl"><img src="${U(s)}" alt="${p.t}" data-k="${k}" draggable="false"></div>`).join(''):'<div class="sl">Foto proyek belum ditambahkan</div>'}</div>${n>1?`<button class="ar a1" data-d="-1" aria-label="Sebelumnya">‹</button><button class="ar a2" data-d="1" aria-label="Berikutnya">›</button><div class="dts">${ok.map(()=>'<i></i>').join('')}</div>`:''}</div><div class="mb2"><div class="tg"><span>${p.l}</span><span>${p.lb}</span>${p.tm?'<span>CV. E-Solusindo</span>':''}</div><h3>${p.t}</h3><p>${p.d}</p><h4>Fitur dan peran</h4><ul>${p.p.map(x=>`<li>${x}</li>`).join('')}</ul><h4>Teknologi</h4><div class="tg">${p.s.map(x=>`<span>${x}</span>`).join('')}</div></div>`;
+const cs=$('#cs'),ds=$$('.dts i',m),up=()=>{const k=Math.round(cs.scrollLeft/cs.clientWidth);ds.forEach((d,j)=>d.classList.toggle('on',j==k))};
+up();cs.onscroll=up;dg(cs,1);
+$$('.ar',m).forEach(b=>b.onclick=()=>cs.scrollBy({left:b.dataset.d*cs.clientWidth,behavior:'smooth'}));
+cs.onclick=e=>{const im=e.target.closest('img');if(im)lb(ok.map(s=>[U(s),p.t]),+im.dataset.k)};
+$('#ov').classList.add('on');document.body.style.overflow='hidden';m.scrollTop=0}
+const cm=()=>{$('#ov').classList.remove('on');document.body.style.overflow=''};
+
+/* ===== LIGHTBOX ===== */
+let LL=[],LI=0;
+function lb(l,i){LL=l;LI=(i+l.length)%l.length;$('#lbi').src=LL[LI][0];$('#lbc').textContent=LL[LI][1]||'';$('#lbx').classList.add('on')}
+const clb=()=>$('#lbx').classList.remove('on');
+$('#lp').onclick=()=>lb(LL,LI-1);$('#ln').onclick=()=>lb(LL,LI+1);
+$('#ov').onclick=e=>{if(e.target.id=='ov')cm()};$('#lbx').onclick=e=>{if(e.target.id=='lbx')clb()};
+document.addEventListener('click',e=>{const c=e.target.closest('[data-c]');if(c)(c.dataset.c=='md'?cm:clb)()});
+addEventListener('keydown',e=>{const l=$('#lbx').classList.contains('on');
+if(e.key=='Escape')l?clb():cm();else if(l&&e.key=='ArrowLeft')lb(LL,LI-1);else if(l&&e.key=='ArrowRight')lb(LL,LI+1)});
+
+/* ===== GALERI DOKUMENTASI (geser manual + otomatis) ===== */
+(async()=>{const gl=$('#gl'),gt=$('#gt'),ok=(await Promise.all(GL.map(g=>ld(g[0]).then(r=>r&&g)))).filter(Boolean);
+if(!ok.length){gt.innerHTML='<p class="em">Tambahkan foto dokumentasi pada daftar GL di script.</p>';return}
+const h=ok.map((g,i)=>`<div class="gc" data-i="${i}"><img src="${U(g[0])}" alt="${g[1]}" draggable="false"><span>${g[1]}</span></div>`).join('');
+gt.innerHTML=h;const W=gt.scrollWidth+16,n=Math.ceil(gl.clientWidth/W)+3;gt.innerHTML=h.repeat(n);gl.scrollLeft=W;dg(gl);
+let pu=0,ac=0;gl.onmouseenter=()=>pu=Infinity;gl.onmouseleave=()=>pu=0;gl.ontouchstart=()=>pu=Infinity;gl.ontouchend=()=>pu=Date.now()+2500;
+gt.onclick=e=>{const c=e.target.closest('.gc');if(c)lb(ok.map(g=>[U(g[0]),g[1]]),+c.dataset.i)};
+$$('.ga').forEach(b=>b.onclick=()=>gl.scrollBy({left:b.dataset.d*320,behavior:'smooth'}));
+(function t(){if(!RM&&Date.now()>pu&&!gl.dragging&&!$('#lbx').classList.contains('on')&&!$('#ov').classList.contains('on')){ac+=.7;if(ac>=1){gl.scrollLeft+=ac|0;ac-=ac|0}}
+const s=gl.scrollLeft;if(s>=2*W)gl.scrollLeft=s-W;else if(s<=1)gl.scrollLeft=s+W;requestAnimationFrame(t)})()})();
+
+/* ===== KONTAK ===== */
+$('#cf').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);location.href=`mailto:ridhofaisal114@gmail.com?subject=${encodeURIComponent('Pesan dari portfolio: '+f.get('n'))}&body=${encodeURIComponent(f.get('m')+'\n\n'+f.get('n')+' ('+f.get('e')+')')}`};
+$('#cp').onclick=async()=>{try{await navigator.clipboard.writeText('ridhofaisal114@gmail.com');$('#cp span').textContent='Email tersalin'}catch(e){location.href='mailto:ridhofaisal114@gmail.com'}};
+ic();
+</script>
+</body>
+</html>
