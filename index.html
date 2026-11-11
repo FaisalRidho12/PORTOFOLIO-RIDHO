@@ -1580,9 +1580,19 @@
         /* ===== HERO: TYPING + KOLASE FOTO ===== */
         const RL = ['IoT Engineer', 'Full-Stack Developer', 'Mobile App Developer', 'UI/UX dan Graphic Designer']; let ri = 0, ci = 0, del = 0;
         (function ty() {
-            const c = RL[ri]; if (RM) { $('#ty').textContent = c; return }
-            $('#ty').textContent = c.slice(0, del ? --ci : ++ci); let t = del ? 35 : 70;
-            if (!del && ci == c.length) { del = 1; t = 1800 } else if (del && !ci) { del = 0; ri = (ri + 1) % RL.length } setTimeout(ty, t)
+            const c = RL[ri]; 
+            // if (RM) { $('#ty').textContent = c;
+            //     return }
+            $('#ty').textContent = c.slice(0, del ? --ci : ++ci);
+            let t = del ? 35 : 70;
+            if (!del && ci == c.length) { 
+                del = 1; 
+                t = 1800 
+            } else if (del && !ci) { 
+                del = 0; 
+                ri = (ri + 1) % RL.length 
+            }
+            setTimeout(ty, t)
         })();
         $('#np').textContent = PR.length;
         (async () => {
