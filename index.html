@@ -1565,14 +1565,16 @@
         ['k3.png', 'Website Klinik'],
         ['k4.png', 'Website Klinik'],
         ['dash.png', 'Dashboard Monitoring']];
-        const AW = [['trophy', 'Juara 1', 'National Innovation Week Competition 1.0, UNIDA Gontor'],
-        ['trophy', 'Juara 1', 'Pharmacy National Health Competition, Akademi Farmasi Pontianak'],
-        ['trophy', 'Juara 3', 'INJECTION, Institut Teknologi Surabaya'],
-        ['trophy', 'Juara 3', 'IT FEST 2025 Techtonic: Shifting Ideas into Impact'],
-        ['award', 'Finalis', 'Festival Inovasi dan Kewirausahaan Siswa Indonesia (FIKSI)'],
-        ['shield-check', 'Sertifikasi', 'Junior Cyber Security, VSGA BNSP'],
-        ['badge-check', 'LKMM Pra Tingkat Dasar', 'Bakor Pemandu Polije'],
-        ['presentation', 'Webinar', 'Unlocking Skills: Machine Learning Models for Better Future']];
+        const AW = [
+            ['trophy', 'Juara 3', 'IT FEST 2025 Techtonic: Shifting Ideas into Impact (2025)'],
+        ['trophy', 'Juara 1', 'National Innovation Week Competition 1.0, UNIDA Gontor (2023)'],
+        ['trophy', 'Juara 3', 'Science Project and Innovation (INJECTION) - Institut Teknologi Sepuluh Nopember (ITS) (2023)'],
+        ['trophy', 'Juara 1', 'Pharmacy National Health Competition, Akademi Farmasi Pontianak (2022)'],
+        ['award', 'Finalis', 'Festival Inovasi dan Kewirausahaan Siswa Indonesia (FIKSI) bidang Teknologi Digital (2022)'],
+        ['shield-check', 'Sertifikasi', 'Junior Cyber Security, VSGA BNSP (2025)'],
+        ['badge-check', 'LKMM Pra Tingkat Dasar', 'Improving Self-Quality to Become a Leader with Integrity - HMJ Teknologi Informasi (2023)'],
+        // ['presentation', 'Webinar', 'Unlocking Skills: Machine Learning Models for Better Future']
+        ];
 
         /* ===== HELPERS ===== */
         function tabs(el, list, cb) { el.innerHTML = list.map(([k, v], i) => `<button class="tab${i ? '' : ' on'}" data-k="${k}">${v}</button>`).join(''); el.onclick = e => { const b = e.target.closest('.tab'); if (!b) return; $$('.tab', el).forEach(x => x.classList.toggle('on', x == b)); cb(b.dataset.k) } }
